@@ -203,7 +203,52 @@
         <!-- Practice -->
         <div class="container" id="practice">
           <div class="title">Practice</div>
-          <div class="content"></div>
+          <div class="content">
+                <h1>Singly Linked List Visualization</h1>
+
+    <div class="controls">
+        <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
+        <button onclick="createList()">Create List</button>
+    </div>
+    
+    <div id="operations" style="display: none;">
+        <div class="controls">
+            <div id="button_god">
+            <button onclick="showInsertFields()">Insert</button>
+            <button onclick="showDeleteFields()">Delete</button>
+            <button onclick="showSearchField()">Search</button>
+            </div>
+            <div class="input-container">
+                <!-- Insert Fields -->
+                <div class="inputlist" id="insertDeleteFields" style="display: none;">
+                    <input type="number" id="nodeValue" placeholder="Enter the Element">
+                    <input type="number" id="nodeIndex" placeholder="Enter the Index">
+                </div>
+                
+                <!-- Delete Fields -->
+                <div class="inputlist" id="deleteField" style="display: none;">
+                    <input type="number" id="deleteindex" placeholder="Enter Delete Index">
+                </div>
+    
+                <!-- Search Field -->
+                <div class="inputlist" id="searchField" style="display: none;">
+                    <input type="number" id="searchValue" placeholder="Search Value">
+                </div>
+    
+                <!-- Run Simulation Button -->
+                <button id="runSimulationButton" style="display: none;" onclick="runSimulation()">Run Simulation</button>
+            </div>
+    
+            <p id="searchResult"></p>
+        </div>
+    </div>
+    
+
+    <div class="list-container" id="linkedList">
+        <!-- Nodes will be dynamically added here -->
+    </div>
+
+          </div>
         </div>
 
         <!-- Results -->
