@@ -1,329 +1,729 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="brief description" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add your V-Lab Title here</title>
-    <link rel="icon" href="images/vlab-logo.png" type="image/x-icon" />
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/harmonic16-dark.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="logo-container">
-        <div class="logo">
-          <a
-            href="https://www.vlab.andcollege.du.ac.in"
-            rel="noopener"
-            target="_blank"
-          >
-            <img class="logo-img" src="images/logo.png" alt="VLab" />
-          </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="brief description" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add your V-Lab Title here</title>
+  <link rel="icon" href="images/vlab-logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/harmonic16-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <div class="logo">
+        <a href="https://www.vlab.andcollege.du.ac.in" rel="noopener" target="_blank">
+          <img class="logo-img" src="images/logo.png" alt="VLab" />
+        </a>
+      </div>
+      <h1 class="vlab">V-Lab@ANDC</h1>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav class="nav-menu" id="small-screen">
+      <div class="close-btn" onclick="toggleMenu()">✖</div>
+      <a href="https://www.vlab.andcollege.du.ac.in">Home</a>
+      <a href="https://www.vlab.andcollege.du.ac.in#labs_section">Labs</a>
+      <a href="https://www.vlab.andcollege.du.ac.in#team">Team</a>
+      <a href="https://www.andcollege.du.ac.in">College Website</a>
+    </nav>
+  </header>
+
+  <div class="yourvlabtitle">
+    <h1><b>SINGLY LINKED LIST</b></h1>
+  </div>
+
+  <div class="pageview">
+    <nav class="navigation">
+      <button class="link" onclick="switchContent('aim')">
+        <img class="icon" src="images/Aim_img.png" alt="Aim" />
+        <span>Aim</span>
+      </button>
+
+      <button class="link" onclick="switchContent('theory')">
+        <img class="icon" src="images/theory_img.png" alt="THEORY" />
+        <span>Theory & Appli.</span>
+      </button>
+
+      <button class="link" onclick="switchContent('procedure')">
+        <img class="icon" src="images/procedure_img.png" alt="PROCEDURE" />
+        <span>Procedure</span>
+      </button>
+
+      <button class="link" onclick="switchContent('practice')">
+        <img class="icon" src="images/practice_img.png" alt="PRACTICE" />
+        <span>Practice</span>
+      </button>
+
+      <button class="link" onclick="switchContent('code')">
+        <img class="icon" src="images/code_img.png" alt="CODES" />
+        <span>Codes</span>
+      </button>
+
+      <button class="link" onclick="switchContent('result')">
+        <img class="icon" src="images/result_img.png" alt="RESULT" />
+        <span>Result</span>
+      </button>
+
+      <button class="link" onclick="switchContent('quiz')">
+        <img class="icon" src="images/quiz_img.png" alt="QUIZ" />
+        <span>Quiz</span>
+      </button>
+
+      <button class="link" onclick="switchContent('references')">
+        <img class="icon" src="images/reference_img.png" alt="REFERENCE" />
+        <span>References</span>
+      </button>
+      <button class="link" onclick="switchContent('tnt')">
+        <img class="icon" src="images/tnt_img.png" alt="TEAM & TOOLS" />
+        <span>Team & Tools</span>
+      </button>
+    </nav>
+
+    <section class="main_practical">
+      <!-- Aim -->
+      <div class="container" id="aim">
+        <div class="title">Aim</div>
+        <div class="content">
+          <p> To understand the operations of a Singly Linked List (SLL), specifically the insertion of elements,
+            deletion of elements, and search of elements in various scenarios through visualization.</p>
         </div>
-        <h1 class="vlab">V-Lab@ANDC</h1>
       </div>
 
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <nav class="nav-menu" id="small-screen">
-        <div class="close-btn" onclick="toggleMenu()">✖</div>
-        <a href="https://www.vlab.andcollege.du.ac.in">Home</a>
-        <a href="https://www.vlab.andcollege.du.ac.in#labs_section">Labs</a>
-        <a href="https://www.vlab.andcollege.du.ac.in#team">Team</a>
-        <a href="https://www.andcollege.du.ac.in">College Website</a>
-      </nav>
-    </header>
+      <!-- Theory & Applications -->
+      <div class="container" id="theory">
+        <div class="title">Theory & Applications</div>
+        <div class="content">
+          <p>
+            A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes. Each node contains two
+            parts:
+          </p>
+          <ol>
+            <li><b>Data : </b>The value stored in the node.</li>
+            <li><b>Pointer : </b>The address of the next node in the list.</li>
+          </ol>
+          <p>The first node is called the <b>head</b>, and the last node points to NULL, indicating the end of the list.
+          </p>
+          <h3><b>Example</b></h3>
+          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
+          <h4><b>Operations : </b></h4>
+          <ol>
+            <li>
+              <h2>INSERTION:</h2>
+              <br />
 
-    <div class="yourvlabtitle">
-      <h1>your vlab title</h1>
-    </div>
+              <ul>
+                <li>
+                  <b>Insertion At the beginning:</b>
+                </li>
+                <br />
+                <li>Create a new node </li>
+                <li>Set new_node's next(pointer) to <b>head</b> </li>
+                <li>Update <b>head</b> to new_node</li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <img id="s2_img" src="s2_new.png" alt="insertion_begining">
+                <br />
+                <h3>After Insertion the linked list will look like</h3>
+                <br />
+                <img id="s3_img" src="s3.png" alt="start">
 
-    <div class="pageview">
-      <nav class="navigation">
-        <button class="link" onclick="switchContent('aim')">
-          <img class="icon" src="images/Aim_img.png" alt="Aim" />
-          <span>Aim</span>
-        </button>
+                <li>
+                  <b>Insertion At the end:</b>
+                </li>
+                <br />
+                <li>Create a new node</li>
+                <li>If the list is empty, set <b>head = new_node</b></li>
+                <li>Otherwise, traverse to the last node. </li>
+                <li>Set <b>last_node's next = new_node</b></li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <img id="s6_img" src="s6.png" alt="s6_img">
+                <br />
+                <h3>After insertion the linked list will look like</h3>
+                <img id="s7_img" src="s7.png" alt="s7_img">
 
-        <button class="link" onclick="switchContent('theory')">
-          <img class="icon" src="images/theory_img.png" alt="THEORY" />
-          <span>Theory & Appli.</span>
-        </button>
+                <li><b>Insert At a specific position:</b></li>
+                <br />
+                <li>Create a new node</li>
+                <li>Traverse to the new node before the desired position.</li>
+                <li>Update <b>new_node's next</b> to <b>current_node's next</b>.</li>
+                <li>Set <b>current_node's next = new_node.</b></li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <br />
+                <img id="s4_img" src="s4.png" alt="s4_img">
 
-        <button class="link" onclick="switchContent('procedure')">
-          <img class="icon" src="images/procedure_img.png" alt="PROCEDURE" />
-          <span>Procedure</span>
-        </button>
+                <h3><b>After insertion the linked list will look like</b></h3>
+                <br />
+                <img id="s5_img" src="s5.png" alt="s6_img">
+              </ul>
+            <li>
+              <h2> <b>Deletion:</b></h2>
 
-        <button class="link" onclick="switchContent('practice')">
-          <img class="icon" src="images/practice_img.png" alt="PRACTICE" />
-          <span>Practice</span>
-        </button>
+              <ul>
+                <li><b>Deleting From beginning:</b></li>
+                <br />
+                <li>Removes the first node of the list.</li>
+                <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
+                <li>Set <b>head = head's next</b></li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <img id="s8_img" src="s8.png" alt="s8_img">
+                <h3><b>After Deletion the Liked List will look like</b></h3>
+                <br />
+                <img id="s9_img" src="s9.png" alt="s9_img">
+                <br />
 
-        <button class="link" onclick="switchContent('code')">
-          <img class="icon" src="images/code_img.png" alt="CODES" />
-          <span>Codes</span>
-        </button>
 
-        <button class="link" onclick="switchContent('result')">
-          <img class="icon" src="images/result_img.png" alt="RESULT" />
-          <span>Result</span>
-        </button>
+                <li><b>Deletion From the end of the Linked List:</b></li>
+                <br />
+                <li>Removes the last node of the list.</li>
+                <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
+                <li>Set <b>second_last_node's next = None</b></li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <br />
+                <img id="s12_img" src="s12.png" alt="s12_img">
+                <br>
+                <h3><b>After Deletion from the end, The Linked List will look like</b></h3>
+                <br />
+                <img id="s13_img" src="s13.png" alt="s13_img">
+                <li><b>Delete at a Specific Position:</b></li>
+                <br />
+                <li> Removes the node at a given index.</li>
+                <li>If position is 1,update <b>head = head's next</b></li>
+                <li>Otherwise, traverse to the node before the desired position.</li>
+                <li>Set <b>current_node's next = current_node's next of next</b></li>
+                <br />
+                <h3><b>Example-></b></h3>
+                <img id="s10_img" src="s10.png" alt="s10_img">
+                <br />
 
-        <button class="link" onclick="switchContent('quiz')">
-          <img class="icon" src="images/quiz_img.png" alt="QUIZ" />
-          <span>Quiz</span>
-        </button>
-
-        <button class="link" onclick="switchContent('references')">
-          <img class="icon" src="images/reference_img.png" alt="REFERENCE" />
-          <span>References</span>
-        </button>
-        <button class="link" onclick="switchContent('tnt')">
-          <img class="icon" src="images/tnt_img.png" alt="TEAM & TOOLS" />
-          <span>Team & Tools</span>
-        </button>
-      </nav>
-
-      <section class="main_practical">
-        <!-- Aim -->
-        <div class="container" id="aim">
-          <div class="title">Aim</div>
-          <div class="content">
-            <p>The aim of your Virtual lab</p>
-          </div>
+                <h3><b>After Deletion from the middle the Linked List will look like</b></h3>
+                <br />
+                <img id="s11_img" src="s11.png" alt="s11_img">
+                <br />
+              </ul>
+            </li>
+            </li>
+          </ol>
         </div>
 
-        <!-- Theory & Applications -->
-        <div class="container" id="theory">
-          <div class="title">Theory & Applications</div>
-          <div class="content">
-            <p>
-              This section covers the fundamental theories and applications of
-              the concept.
-            </p>
+      </div>
 
-            <span>Key Concepts</span>
+      <!-- Procedure -->
+      <div class="container" id="procedure">
+        <div class="title">Procedure</div>
+        <h3>Insertion-></h3>
+        <br />
+        <div class="content">
+          <p>The Procedure for Implementing Linked List</p>
+          <ol class="steps-list">
+            <li><b>At the begining:</b></li>
+            <ul type="i">
+              <li>Create a new node.</li>
+              <li>Point the new node’s next to the current head.</li>
+              <li>Update the head to the new node.</li>
+            </ul>
+            <li> <b>At the End:</b></li>
             <ul>
-              <li>Fundamentals of Data Structures</li>
-              <li>
-                Algorithms and Their Applications
-                <ul>
-                  <li>Sorting Algorithms</li>
-                  <li>Searching Algorithms</li>
-                </ul>
-              </li>
-              <li>Time Complexity Analysis</li>
+              <li>Create a new node</li>
+              <li>Traverse the list to find the new node</li>
+              <li>Point the last node next to new node</li>
             </ul>
 
-            <span>Applications in Real World</span>
-            <ol>
-              <li>Application of Sorting Algorithms in Search Engines</li>
-              <li>Machine Learning Algorithms in Predictive Analytics</li>
-              <li>Data Structures in Web Development</li>
-            </ol>
-
-          </div>
-        </div>
-
-        <!-- Procedure -->
-        <div class="container" id="procedure">
-          <div class="title">Procedure</div>
-          <div class="content">
-            <p>
-              This section provides the steps and procedure for implementing the
-              concept discussed above.
-            </p>
-
-            <span>Steps for Sorting Algorithms</span>
-            <ol>
-              <li>Choose the appropriate sorting algorithm based on data</li>
-              <li>Apply the sorting algorithm to the dataset</li>
-              <li>Analyze the time complexity and performance</li>
-            </ol>
-
-            <span>Steps for Implementing Search Algorithms</span>
+            <li> <b>At a specific position:</b></li>
             <ul>
-              <li>Identify the data structure to be used</li>
-              <li>
-                Choose the best search algorithm (e.g., Linear Search, Binary
-                Search)
-              </li>
-              <li>Test the algorithm on various datasets</li>
+              <li>Create a new node</li>
+              <li>Traverse the list to the node just before the specified position.</li>
+              <li>Update the pointers to insert the new node in the desired position.</li>
             </ul>
-          </div>
+          </ol>
+          </li>
+        </div>
+      </div>
+
+      <!-- Code -->
+      <div class="container" id="code">
+        <div class="title">Code</div>
+        <p>Example programs</p>
+        <div class="switch-container">
+          <input class="togswt" type="radio" id="cppRadio" name="codeSwitch" checked />
+          <label for="cppRadio">C++</label>
+
+          <input class="togswt" type="radio" id="pythonRadio" name="codeSwitch" />
+          <label for="pythonRadio">Python</label>
         </div>
 
-        <!-- Code -->
-        <div class="container" id="code">
-          <div class="title">Code</div>
-          <p>Example programs</p>
-          <div class="switch-container">
-            <input
-              class="togswt"
-              type="radio"
-              id="cppRadio"
-              name="codeSwitch"
-              checked
-            />
-            <label for="cppRadio">C++</label>
+        <div class="code-blocks">
+          <div id="cppCode" class="code-block active">
+            <div class="code-content">
+              <pre><code class="language-cpp">
+        #C++ code        
 
-            <input
-              class="togswt"
-              type="radio"
-              id="pythonRadio"
-              name="codeSwitch"
-            />
-            <label for="pythonRadio">Python</label>
-          </div>
-
-          <div class="code-blocks">
-            <div id="cppCode" class="code-block active">
-              <div class="code-content">
-                <pre><code class="language-cpp">// C++ Code Example</code></pre>
-                <button class="copy-button">Copy</button>
-              </div>
+        #include \<iostream>\
+        using namespace std;
+        
+        // Node class
+        class Node {
+        private:
+            int data;
+            Node* next;
+        
+        public:
+            Node(int value) { // Constructor to initialize a node
+                data = value;
+                next = nullptr;
+            }
+        
+            friend class SinglyLinkedList;
+        };
+        
+        // Singly Linked List class
+        class SinglyLinkedList {
+        private:
+            Node* head; // Pointer to the first node
+        
+        public:
+            // Constructor
+            SinglyLinkedList() {
+                head = nullptr;
+            }
+        
+            // Insert at the start
+            void insertAtStart(int value) {
+                Node* newNode = new Node(value);
+                newNode->next = head;
+                head = newNode;
+            }
+        
+            // Insert at the end
+            void insertAtEnd(int value) {
+                Node* newNode = new Node(value);
+                if (!head) { // If the list is empty
+                    head = newNode;
+                    return;
+                }
+                Node* temp = head;
+                while (temp->next) {
+                    temp = temp->next;
+                }
+                temp->next = newNode;
+            }
+        
+            // Insert in the middle (after a given value)
+            void insertAfter(int target, int value) {
+                Node* temp = head;
+                while (temp && temp->data != target) {
+                    temp = temp->next;
+                }
+                if (temp) { // If the target node is found
+                    Node* newNode = new Node(value);
+                    newNode->next = temp->next;
+                    temp->next = newNode;
+                } else {
+                    cout << "Target value not found!\n";
+                }
+            }
+        
+            // Delete at the start
+            void deleteAtStart() {
+                if (!head) { // If the list is empty
+                    cout << "List is empty!\n";
+                    return;
+                }
+                Node* temp = head;
+                head = head->next;
+                delete temp;
+            }
+        
+            // Delete at the end
+            void deleteAtEnd() {
+                if (!head) { // If the list is empty
+                    cout << "List is empty!\n";
+                    return;
+                }
+                if (!head->next) { // If there is only one node
+                    delete head;
+                    head = nullptr;
+                    return;
+                }
+                Node* temp = head;
+                while (temp->next->next) {
+                    temp = temp->next;
+                }
+                delete temp->next;
+                temp->next = nullptr;
+            }
+        
+            // Delete in the middle (specific value)
+            void deleteValue(int value) {
+                if (!head) { // If the list is empty
+                    cout << "List is empty!\n";
+                    return;
+                }
+                if (head->data == value) { // If the value is at the start
+                    Node* temp = head;
+                    head = head->next;
+                    delete temp;
+                    return;
+                }
+                Node* temp = head;
+                while (temp->next && temp->next->data != value) {
+                    temp = temp->next;
+                }
+                if (temp->next) { // If the value is found
+                    Node* toDelete = temp->next;
+                    temp->next = temp->next->next;
+                    delete toDelete;
+                } else {
+                    cout << "Value not found!\n";
+                }
+            }
+        
+            // Search for a value
+            bool search(int value) {
+                Node* temp = head;
+                while (temp) {
+                    if (temp->data == value) {
+                        return true;
+                    }
+                    temp = temp->next;
+                }
+                return false;
+            }
+        
+            // Display the list
+            void display() {
+                Node* temp = head;
+                while (temp) {
+                    cout << temp->data << " -> ";
+                    temp = temp->next;
+                }
+                cout << "NULL\n";
+            }
+        
+            // Destructor to free memory
+            ~SinglyLinkedList() {
+                Node* temp;
+                while (head) {
+                    temp = head;
+                    head = head->next;
+                    delete temp;
+                }
+            }
+        };
+        
+        int main() {
+            SinglyLinkedList list;
+        
+            // Test insertion
+            list.insertAtStart(10);
+            list.insertAtStart(20);
+            list.insertAtEnd(30);
+            list.insertAfter(10, 25);
+        
+            cout << "List after insertions: ";
+            list.display();
+        
+            // Test deletion
+            list.deleteAtStart();
+            cout << "List after deleting at start: ";
+            list.display();
+        
+            list.deleteAtEnd();
+            cout << "List after deleting at end: ";
+            list.display();
+        
+            list.deleteValue(25);
+            cout << "List after deleting value 25: ";
+            list.display();
+        
+            // Test search
+            cout << "Searching for 10: " << (list.search(10) ? "Found" : "Not Found") << "\n";
+            cout << "Searching for 40: " << (list.search(40) ? "Found" : "Not Found") << "\n";
+        
+            return 0;
+        }
+                </code></pre>
+              <button class="copy-button">Copy</button>
             </div>
-            <div id="pythonCode" class="code-block">
-              <div class="code-content">
-                <pre><code class="language-python"># Python Code Example</code></pre>
-                <button class="copy-button">Copy</button>
-              </div>
+          </div>
+          <div id="pythonCode" class="code-block">
+            <div class="code-content">
+              <pre><code class="language-python">
+# Python
+ class Node:
+    """A class representing a node in a singly linked list."""
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class SinglyLinkedList:
+    """A class representing a singly linked list."""
+    def __init__(self):
+        self.head = None
+
+    def insert_at_start(self, data):
+        """Insert a new node at the start of the list."""
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_at_end(self, data):
+        """Insert a new node at the end of the list."""
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+
+    def insert_after(self, target, data):
+        """Insert a new node after a specific node value."""
+        current = self.head
+        while current and current.data != target:
+            current = current.next
+        if current:
+            new_node = Node(data)
+            new_node.next = current.next
+            current.next = new_node
+        else:
+            print("Target value not found!")
+
+    def delete_at_start(self):
+        """Delete the node at the start of the list."""
+        if not self.head:
+            print("List is empty!")
+            return
+        self.head = self.head.next
+
+    def delete_at_end(self):
+        """Delete the node at the end of the list."""
+        if not self.head:
+            print("List is empty!")
+            return
+        if not self.head.next:
+            self.head = None
+            return
+        current = self.head
+        while current.next and current.next.next:
+            current = current.next
+        current.next = None
+
+    def delete_value(self, value):
+        """Delete the first node with the given value."""
+        if not self.head:
+            print("List is empty!")
+            return
+        if self.head.data == value:
+            self.head = self.head.next
+            return
+        current = self.head
+        while current.next and current.next.data != value:
+            current = current.next
+        if current.next:
+            current.next = current.next.next
+        else:
+            print("Value not found!")
+
+    def search(self, value):
+        """Search for a node with the given value."""
+        current = self.head
+        while current:
+            if current.data == value:
+                return True
+            current = current.next
+        return False
+
+    def display(self):
+        """Display the linked list."""
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("NULL")
+
+
+# Example usage
+if __name__ == "__main__":
+    linked_list = SinglyLinkedList()
+
+    # Test insertion
+    linked_list.insert_at_start(10)
+    linked_list.insert_at_start(20)
+    linked_list.insert_at_end(30)
+    linked_list.insert_after(10, 25)
+
+    print("List after insertions:")
+    linked_list.display()
+
+    # Test deletion
+    linked_list.delete_at_start()
+    print("List after deleting at start:")
+    linked_list.display()
+
+    linked_list.delete_at_end()
+    print("List after deleting at end:")
+    linked_list.display()
+
+    linked_list.delete_value(25)
+    print("List after deleting value 25:")
+    linked_list.display()
+
+    # Test search
+    print("Searching for 10:", "Found" if linked_list.search(10) else "Not Found")
+    print("Searching for 40:", "Found" if linked_list.search(40) else "Not Found")
+
+                </code></pre>
+              <button class="copy-button">Copy</button>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Practice -->
-        <div class="container" id="practice">
-          <div class="title">Practice</div>
-          <div class="content">
-                <h1>Singly Linked List Visualization</h1>
+      <!-- Practice -->
+      <div class="container" id="practice">
+        <div class="title">Practice</div>
+        <div class="content">
+          <h1 id="head1">Singly Linked List Visualization</h1>
 
-    <div class="controls">
-        <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
-        <button onclick="createList()">Create List</button>
-    </div>
-    
-    <div id="operations" style="display: none;">
-        <div class="controls">
-            <div id="button_god">
-            <button onclick="showInsertFields()">Insert</button>
-            <button onclick="showDeleteFields()">Delete</button>
-            <button onclick="showSearchField()">Search</button>
-            </div>
-            <div class="input-container">
+          <div class="controls">
+            <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
+            <button onclick="createList()">Create List</button>
+          </div>
+
+          <div id="operations" style="display: none;">
+            <div class="controls">
+              <div id="button_god">
+                <button onclick="showInsertFields()">Insert</button>
+                <button onclick="showDeleteFields()">Delete</button>
+                <button onclick="showSearchField()">Search</button>
+              </div>
+              <div class="input-container">
                 <!-- Insert Fields -->
                 <div class="inputlist" id="insertDeleteFields" style="display: none;">
-                    <input type="number" id="nodeValue" placeholder="Enter the Element">
-                    <input type="number" id="nodeIndex" placeholder="Enter the Index">
+                  <input type="number" id="nodeValue" placeholder="Enter the Element">
+                  <input type="number" id="nodeIndex" placeholder="Enter the Index">
                 </div>
-                
+
                 <!-- Delete Fields -->
                 <div class="inputlist" id="deleteField" style="display: none;">
-                    <input type="number" id="deleteindex" placeholder="Enter Delete Index">
+                  <input type="number" id="deleteindex" placeholder="Enter Delete Index">
                 </div>
-    
+
                 <!-- Search Field -->
                 <div class="inputlist" id="searchField" style="display: none;">
-                    <input type="number" id="searchValue" placeholder="Search Value">
+                  <input type="number" id="searchValue" placeholder="Search Value">
                 </div>
-    
+
                 <!-- Run Simulation Button -->
-                <button id="runSimulationButton" style="display: none;" onclick="runSimulation()">Run Simulation</button>
+                <button id="runSimulationButton" style="display: none;" onclick="runSimulation()">Run
+                  Simulation</button>
+              </div>
+
+              <p id="searchResult"></p>
             </div>
-    
-            <p id="searchResult"></p>
-        </div>
-    </div>
-    
-
-    <div class="list-container" id="linkedList">
-        <!-- Nodes will be dynamically added here -->
-    </div>
-
           </div>
-        </div>
 
-        <!-- Results -->
-        <div class="container" id="result">
-          <div class="title">Result</div>
-          <div class="content">
-            <p>Result of your vlab</p>
+
+          <div class="list-container" id="linkedList">
+            <!-- Nodes will be dynamically added here -->
           </div>
-        </div>
 
-        <!-- Quiz -->
-        <div class="container" id="quiz">
-          <div class="title">Quiz</div>
-          <p id="question"></p>
-          <div id="choices" class="choices"></div>
-          <button id="save-btn" class="save-button">Save</button>
-          <button id="next-btn" class="next-button" style="display: none">
-            Next
-          </button>
-          <button id="retake-btn" style="display: none">Retake Quiz</button>
-          <div id="quiz-report" style="display: none"></div>
-          <!-- Section to display quiz report -->
         </div>
+      </div>
 
-        <!-- References -->
-        <div class="container" id="references">
-          <div class="title">References</div>
-          <div class="content">
-            <ul class="ref-list">
-              <li>
-                <span> refernce 1 </span>
-              </li>
-              <li>
-                <span> refernce 2 </span>
-              </li>
-            </ul>
-          </div>
+      <!-- Results -->
+      <div class="container" id="result">
+        <div class="title">Result</div>
+        <div class="content">
+          <p>
+            The Singly Linked List simulation successfully implemented insertion, deletion, and search operations. Nodes
+            were correctly inserted at different positions, deleted as per specified conditions, and searched
+            efficiently, returning the position if found or "not found" if not present. The operations performed as
+            expected.
+          </p>
         </div>
+      </div>
 
-        <!-- Team & Tools -->
-        <div class="container" id="tnt">
-          <div class="title">Team & Tools</div>
-          <div class="content">
-            <h3>Students</h3>
-            <ul class="ref-list">
-              <li>
-                <a href="profile url if you have" rel="noopener" target="_blank"
-                  ><span>Name and Course of each team member</span></a
-                >
-              </li>
-            </ul>
-            <h3>Mentors</h3>
-            <ul class="ref-list">
-              <li><span> Mentor Name</span></li>
-            </ul>
-            <h3>Tools Used</h3>
-            <ul class="tools-list">
-              <li>
-                <span> Add tools used here </span>
-              </li>
-              <li>
-                <span>Vanilla HTML, CSS, JS - for creating the web page</span>
-              </li>
-            </ul>
-          </div>
+      <!-- Quiz -->
+      <div class="container" id="quiz">
+        <div class="title">Quiz</div>
+        <p id="question"></p>
+        <div id="choices" class="choices"></div>
+        <button id="save-btn" class="save-button">Save</button>
+        <button id="next-btn" class="next-button" style="display: none">
+          Next
+        </button>
+        <button id="retake-btn" style="display: none">Retake Quiz</button>
+        <div id="quiz-report" style="display: none"></div>
+        <!-- Section to display quiz report -->
+      </div>
+
+      <!-- References -->
+      <div class="container" id="references">
+        <div class="title">References</div>
+        <div class="content">
+          <ul class="ref-list">
+            <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C. (2022). Introduction to
+                Algorithms, Fourth Edition. United Kingdom: MIT Press.</span></li>
+            <li><span>Bhargava, A. (2016). Grokking Algorithms: An Illustrated Guide for Programmers and
+                Other Curious People. United States: Manning.</span></li>
+            <li><span>A Complete Overview on: Web Development
+                By- Ayush Mauryavanshi
+              </span></li>
+          </ul>
         </div>
-      </section>
-    </div>
-    <script>
-      hljs.highlightAll();
-      function toggleMenu() {
-        const menu = document.querySelector(".nav-menu");
-        menu.classList.toggle("show");
-      }
-    </script>
-    <script src="script.js"></script>
-  </body>
+      </div>
+
+      <!-- Team & Tools -->
+      <div class="container" id="tnt">
+        <div class="title">Team & Tools</div>
+        <div class="content">
+          <h3>Students</h3>
+          <ul class="ref-list">
+            <li><a href="https://github.com/RISHIK396" rel="noopener" target="_blank"><span>Rishik Chaudhary - B. Sc.
+                  (H) CS 3<sup>rd</sup> Year</span></a></li>
+            <li><a href="https://github.com/KeshavKhari" rel="noopener" target="_blank"><span>Keshav Khari - B. Sc. (H)
+                  CS 3<sup>rd</sup> Year</span></a></li>
+          </ul>
+          <h3>Mentors</h3>
+          <ul class="ref-list">
+            <li><span>Mrs Priyanka Sharma</span></li>
+          </ul>
+          <h3>Tools Used</h3>
+          <ul class="tools-list">
+            <li><span>VS-Code</span></li>
+            <li><span>HTML-5, CSS, JS - for creating the web page</span></li>
+            <li><span>Figma,Canva - for designing figures and UI mockups</span></li>
+            <li>
+              <span>Vanilla HTML, CSS, JS - for creating the web page</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    hljs.highlightAll();
+    function toggleMenu() {
+      const menu = document.querySelector(".nav-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+
 </html>

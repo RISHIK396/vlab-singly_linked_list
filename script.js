@@ -84,15 +84,36 @@ document.querySelectorAll(".copy-button").forEach((button) => {
 
 // Quiz Logic
 const questions = [
-    {
-      question: " Q1) Which of the following is/are valid searching algorithms?",
-      choices: ["Linear Search", "Bubble Sort", "Binary Search", "Quick Sort"],
-      correctAnswers: [0, 2], // Correct answers are indexes 0 and 2 (multiple answers possible)
+   {
+        question: "What is the advantage of using singly linked list over an array ? ",
+        choices: ["Faster Random Access Time", "Dynamic memory Allocation Without Predefined Size", "Lower Memory ", "Easier to Implement"],
+        correctAnswers: [1]
     },
     {
-      question: " Q2) What is/are the time complexity of linear search?",
-      choices: ["O(log n)", "O(n)", "O(n^2)", "O(1)"],
-      correctAnswers: [1], // Correct answer is index 1 (single answer)
+        question: " Q2) In a Singly Linked List, how do you delete the last node?",
+        choices: ["Update the second last node’s next to NULL.", " Update the last node's data to NULL.", "Update the head to NULL.", " It is not possible to delete the last node."],
+        correctAnswers: [0]
+    },
+    {
+        question: " Q3) What does the next pointer in a node of a Singly Linked List represent?",
+        choices: ["Points to the previous node.", "Points to the next node.", " Points to the head.", "Points to NULL."],
+        correctAnswers: [1]
+    },
+    {
+        question: " Q4) Which operation is faster in a Singly Linked List compared to an array?",
+        choices: [" Searching for an element.", "Accessing the middle element.", " Inserting an element at the beginning.", "Inserting an element at the end."],
+        correctAnswers: [2]
+    },
+    {
+        question: " Q5) In a Singly Linked List, if the head is NULL, what does it indicate?",
+        choices: ["The list has one node.", "The list is empty.", "The list has an infinite loop.", "The list contains only NULL values"],
+        correctAnswers: [1]
+    },
+
+    {
+        question: "Q6) Is it possible to traverse a singly linked list backward ? If not, why ?",
+        choices:["Yes, by using a prev pointer","No, because to the next node","Yes, by reversing the list first","No, because singly linked lists are circular"],
+        correctAnswers:[1]
     },
   ];
   
