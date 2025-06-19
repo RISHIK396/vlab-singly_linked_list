@@ -287,13 +287,22 @@ class LinkedList {
         this.size = 0;
     }
 
+    sleep = ms => new Promise(res => setTimeout(res, ms));
+
+    getNodeAt(index) {
+        let curr = this.head, i = 1;
+        while (curr && i < index) curr = curr.next, i++;
+        return curr;
+    }
+
     async traverseToIndex(index) {
-        let current = this.head;
-        let count = 1;  // Start from 1
-        let arrows = document.querySelectorAll(".arrow");
-        let nodes = document.querySelectorAll(".node");
-        let head = document.querySelector(".head-pointer");
-        let headarrow = document.querySelector(".head-arrow");
+        let curr = this.head, i = 1;
+        const [arrows, nodes, head, headarrow] = [
+            document.querySelectorAll(".arrow"),
+            document.querySelectorAll(".node"),
+            document.querySelector(".head-pointer"),
+            document.querySelector(".head-arrow")
+        ];
 
         head.classList.add("blink-found");
         await this.sleep(1000);
@@ -303,62 +312,43 @@ class LinkedList {
         await this.sleep(1000);
         headarrow.classList.remove("pointer-expands");
 
-        while (current && count < index) {
-            if (nodes[count - 1]) {
-                nodes[count - 1].classList.add("traverse-node");
-            }
-
+        while (curr && i < index) {
+            if (nodes[i - 1]) nodes[i - 1].classList.add("traverse-node");
             await this.sleep(400);
-
-            if (arrows[count - 1]) {
-                arrows[count - 1].classList.add("traverse-arrow");
-            }
-
+            if (arrows[i - 1]) arrows[i - 1].classList.add("traverse-arrow");
             await this.sleep(400);
-
-            if (nodes[count - 1]) {
-                nodes[count - 1].classList.add("blink-node");
+            if (nodes[i - 1]) {
+                nodes[i - 1].classList.add("blink-node");
                 await this.sleep(300);
-                nodes[count - 1].classList.remove("blink-node");
+                nodes[i - 1].classList.remove("blink-node", "traverse-node");
             }
-
-            if (nodes[count - 1]) {
-                nodes[count - 1].classList.remove("traverse-node");
-            }
-            if (arrows[count - 1]) {
-                arrows[count - 1].classList.remove("traverse-arrow");
-            }
-
-            current = current.next;
-            count++;
+            if (arrows[i - 1]) arrows[i - 1].classList.remove("traverse-arrow");
+            curr = curr.next;
+            i++;
         }
     }
 
     async insertAt(value, index) {
-        if (index < 1 || index > this.size + 1) return;
-
+        document.getElementById("searchResult").textContent = "";
+        if (index < 1 || index > this.size + 1) return alert("Valid index: 1 to " + (this.size + 1));
         await this.traverseToIndex(index);
 
-        let newNode = new Node(value);
-        if (index === 1) {
-            newNode.next = this.head;
-            this.head = newNode;
-        } else {
-            let prev = this.getNodeAt(index - 1);
+        const newNode = new Node(value);
+        if (index === 1) this.head = newNode, newNode.next = this.head;
+        else {
+            const prev = this.getNodeAt(index - 1);
             newNode.next = prev.next;
             prev.next = newNode;
         }
         this.size++;
-
         this.display();
 
-        let nodes = document.querySelectorAll(".node");
+        const nodes = document.querySelectorAll(".node");
         if (nodes[index - 1]) {
             nodes[index - 1].style.opacity = "0";
             nodes[index - 1].style.transform = "scale(0.7)";
-
             setTimeout(() => {
-                nodes[index - 1].style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+                nodes[index - 1].style.transition = "opacity 0.6s, transform 0.6s";
                 nodes[index - 1].style.opacity = "1";
                 nodes[index - 1].style.transform = "scale(1)";
             }, 100);
@@ -366,333 +356,197 @@ class LinkedList {
     }
 
     async deleteAt(index) {
-        if (index < 1 || index > this.size || !this.head) return;
-
+        document.getElementById("searchResult").textContent = "";
+        if (index < 1 || index > this.size) return alert("Valid index: 1 to " + this.size);
         await this.traverseToIndex(index);
 
-        let removedNode;
-        let nodes = document.querySelectorAll(".node");
-
+        const nodes = document.querySelectorAll(".node");
         if (nodes[index - 1]) {
-            nodes[index - 1].style.transition = "opacity 0.5s ease-out";
+            nodes[index - 1].style.transition = "opacity 0.5s";
             nodes[index - 1].style.opacity = "0";
-
             await this.sleep(500);
         }
 
-        if (index === 1) {
-            removedNode = this.head;
-            this.head = this.head.next;
-        } else {
-            let prev = this.getNodeAt(index - 1);
-            removedNode = prev.next;
-            prev.next = removedNode.next;
+        if (index === 1) this.head = this.head.next;
+        else {
+            const prev = this.getNodeAt(index - 1);
+            prev.next = prev.next.next;
         }
 
         this.size--;
         this.display();
     }
 
-    // async deleteByValue(value) {
-    //     if (!this.head) return;
-
-    //     let current = this.head;
-    //     let prev = null;
-    //     let index = 1;
-    //     let nodes = document.querySelectorAll(".node");
-    //     let arrows = document.querySelectorAll(".arrow");
-
-    //     while (current) {
-    //         if (current.value === value) {
-    //             if (nodes[index - 1]) {
-    //                 nodes[index - 1].style.transition = "opacity 0.5s ease-out";
-    //                 nodes[index - 1].style.opacity = "0";
-
-    //                 await this.sleep(500);
-    //             }
-
-    //             if (prev === null) {
-    //                 this.head = current.next;
-    //             } else {
-    //                 prev.next = current.next;
-    //             }
-
-    //             this.size--;
-    //             this.display();
-    //             return;
-    //         }
-
-    //         prev = current;
-    //         current = current.next;
-    //         index++;
-    //     }
-
-    //     alert("Value not found in the list.");
-    // }
-
     async search(value) {
-        let current = this.head;
-        let index = 1;
-        let nodes = document.querySelectorAll(".node");
-        let arrows = document.querySelectorAll(".arrow");
-        let nodesValue = document.querySelectorAll(".node-value");
-
-        let head = document.querySelector(".head-pointer");
-        let headarrow = document.querySelector(".head-arrow");
-        let foundIndices = [];
-
-
-        nodes.forEach(node => {
-            node.classList.remove("traverse-node", "blink-node", "blink-found");
-            node.style.opacity = "1";
-            node.style.transform = "scale(1)";
-        });
+        const nodes = document.querySelectorAll(".node"),
+              arrows = document.querySelectorAll(".arrow"),
+              nodeVals = document.querySelectorAll(".node-value"),
+              head = document.querySelector(".head-pointer"),
+              headArrow = document.querySelector(".head-arrow"),
+              nullSign = document.querySelector(".null-sign");
         
-        arrows.forEach(arrow => {
-            arrow.classList.remove("traverse-arrow");
+        let curr = this.head, index = 1, found = [];
+
+        nodes.forEach(n => n.classList.remove("traverse-node", "blink-node", "blink-found"));
+        arrows.forEach(a => a.classList.remove("traverse-arrow"));
+        nodeVals.forEach(v => {
+            v.classList.remove("blink-node", "blink-found");
+            if (v.dataset.blinkInterval) clearInterval(v.dataset.blinkInterval);
         });
 
-        nodesValue.forEach(nodevalue=>{
-            nodevalue.classList.remove("blink-node");
-        });
-
-        // Animate head pointer
         head.classList.add("blink-found");
         await this.sleep(1000);
         head.classList.remove("blink-found");
-
-        headarrow.classList.add("pointer-expands");
+        headArrow.classList.add("pointer-expands");
         await this.sleep(1000);
-        headarrow.classList.remove("pointer-expands");
+        headArrow.classList.remove("pointer-expands");
 
-
-
-        while (current) {
-            let nodeValueDiv = nodes[index - 1].querySelector(".node-value");
-
-            if (nodeValueDiv) {
-                nodeValueDiv.classList.add("blink-node");
+        while (curr) {
+            const valDiv = nodes[index - 1]?.querySelector(".node-value");
+            if (valDiv) {
+                valDiv.classList.add("blink-node");
                 await this.sleep(300);
-
-                if (current.value === value) {
-                    foundIndices.push(index);
-                    document.getElementById("searchResult").textContent = `Indices: ${foundIndices.join(", ")}`;
-                    nodeValueDiv.classList.remove("blink-node");
-                    nodeValueDiv.classList.add("blink-found");
-                    await this.sleep(1000);
-                    nodeValueDiv.classList.remove("blink-found");
+                valDiv.classList.remove("blink-node");
+                if (curr.value === value) {
+                    found.push(index);
+                    valDiv.classList.add("blink-found");
+                    document.getElementById("searchResult").textContent = `Indices: ${found.join(", ")}`;
                 }
             }
-
             if (nodes[index - 1]) {
                 nodes[index - 1].classList.add("traverse-node");
                 await this.sleep(400);
             }
-
             if (arrows[index - 1]) {
                 arrows[index - 1].classList.add("traverse-arrow");
                 await this.sleep(400);
             }
-
-            current = current.next;
+            curr = curr.next;
             index++;
         }
 
-        let nullSign = document.querySelector(".null-sign");
         if (nullSign) {
             nullSign.classList.add("blink-null");
             await this.sleep(1000);
             nullSign.classList.remove("blink-null");
         }
 
-        if (foundIndices.length > 0) {
-            return;
-        } else {
-            document.getElementById("searchResult").textContent = "Not Found";
-        }
-    }
-
-    getNodeAt(index) {
-        let current = this.head;
-        let count = 1;
-        while (current && count < index) {
-            current = current.next;
-            count++;
-        }
-        return current;
+        await this.sleep(1000);
+        nodeVals.forEach(v => v.classList.remove("blink-found"));
+        if (!found.length) document.getElementById("searchResult").textContent = "Not Found";
     }
 
     async createFromValues(values) {
         this.head = null;
         this.size = 0;
         let prev = null;
-
-        values.forEach((value, index) => {
-            let newNode = new Node(value);
-            if (index === 0) {
-                this.head = newNode;
-            } else {
-                prev.next = newNode;
-            }
+        values.forEach((val, i) => {
+            const newNode = new Node(val);
+            if (i === 0) this.head = newNode;
+            else prev.next = newNode;
             prev = newNode;
             this.size++;
         });
-
         this.display();
     }
 
     display() {
-        let listContainer = document.getElementById("linkedList");
+        const listContainer = document.getElementById("linkedList");
         listContainer.innerHTML = "";
-        let temp = this.head;
-        let index = 1;
+        let curr = this.head, index = 1;
 
-        while (temp) {
-            // Create a wrapper for both node and index
-            let nodeWrapper = document.createElement("div");
-            nodeWrapper.className = "node-wrapper";
+        while (curr) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "node-wrapper";
 
-            let nodeDiv = document.createElement("div");
-            nodeDiv.className = "node";
-            nodeDiv.innerHTML = `
-                <div class="node-value">${temp.value}</div>
-                <div class="node-pointer">
-                    <span class="arrow">→</span>
-                </div>
+            const node = document.createElement("div");
+            node.className = "node";
+            node.innerHTML = `
+                ${index === 1 ? `<div class="head-pointer">HEAD</div><div class="head-arrow">↓</div>` : ""}
+                <div class="node-value">${curr.value}</div>
+                <div class="node-pointer"><span class="arrow">→</span></div>
             `;
 
-            // Create index div
-            let indexDiv = document.createElement("div");
+            const indexDiv = document.createElement("div");
             indexDiv.className = "node-index";
             indexDiv.textContent = `Index: ${index}`;
 
-            if (index === 1) {
-                let headDiv = document.createElement("div");
-                headDiv.className = "head-pointer";
-                headDiv.textContent = "HEAD";
-
-                let headArrowDiv = document.createElement("div");
-                headArrowDiv.className = "head-arrow";
-                headArrowDiv.textContent = "↓";
-
-                nodeDiv.insertBefore(headDiv, nodeDiv.firstChild);
-                nodeDiv.insertBefore(headArrowDiv, nodeDiv.firstChild);
-            }
-
-            // Append node and index to wrapper
-            nodeWrapper.appendChild(nodeDiv);
-            nodeWrapper.appendChild(indexDiv);
-
-            listContainer.appendChild(nodeWrapper);
-            temp = temp.next;
+            wrapper.appendChild(node);
+            wrapper.appendChild(indexDiv);
+            listContainer.appendChild(wrapper);
+            curr = curr.next;
             index++;
         }
 
-        let nodePointers = document.querySelectorAll(".node-pointer");
-        if (nodePointers.length > 0) {
-            nodePointers[nodePointers.length - 1].innerHTML = `<span class="null-sign">∅</span>`;
-        }
+        const pointers = document.querySelectorAll(".node-pointer");
+        if (pointers.length) pointers[pointers.length - 1].innerHTML = `<span class="null-sign">∅</span>`;
     }
 
     highlightNode(index) {
-        let nodes = document.querySelectorAll(".node");
-        if (nodes[index - 1]) {
-            nodes[index - 1].classList.add("blink-node");
-            setTimeout(() => {
-                nodes[index - 1].classList.remove("blink-node");
-            }, 500);
+        const node = document.querySelectorAll(".node")[index - 1];
+        if (node) {
+            node.classList.add("blink-node");
+            setTimeout(() => node.classList.remove("blink-node"), 500);
         }
-    }
-
-    sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
 
-let linkedList = new LinkedList();
+const linkedList = new LinkedList();
+let isOperationRunning = false;
 
-// Add this function to script.js
-function runSimulation() {
-    let insertFieldsVisible = document.getElementById("insertDeleteFields").style.display !== "none";
-    let deleteFieldsVisible = document.getElementById("deleteField").style.display !== "none";
-    let searchFieldVisible = document.getElementById("searchField").style.display !== "none";
+async function runSimulation() {
+    if (isOperationRunning) return alert("Please wait, operation in progress.");
+    isOperationRunning = true;
 
-    if (insertFieldsVisible) {
-        let value = document.getElementById("nodeValue").value.trim();
-        let index = document.getElementById("nodeIndex").value.trim();
+    try {
+        const val = id => document.getElementById(id).value.trim();
+        const get = id => document.getElementById(id);
+        const [insVis, delVis, srcVis] = [
+            get("insertDeleteFields").style.display !== "none",
+            get("deleteField").style.display !== "none",
+            get("searchField").style.display !== "none"
+        ];
 
-        if (value !== "" && index !== "" && !isNaN(value) && !isNaN(index)) {
-            linkedList.insertAt(parseInt(value), parseInt(index));
-        } else {
-            alert("Please provide both a valid value and index.");
+        if (insVis) {
+            if (val("nodeValue") && val("nodeIndex") && !isNaN(val("nodeValue")) && !isNaN(val("nodeIndex")))
+                await linkedList.insertAt(+val("nodeValue"), +val("nodeIndex"));
+            else alert("Enter valid value and index.");
+        } else if (srcVis) {
+            if (val("searchValue") && !isNaN(val("searchValue")))
+                await linkedList.search(+val("searchValue"));
+            else alert("Enter valid value.");
+        } else if (delVis) {
+            if (val("deleteindex") && !isNaN(val("deleteindex")))
+                await linkedList.deleteAt(+val("deleteindex"));
+            else alert("Enter valid index.");
         }
-    } else if (searchFieldVisible) {
-        let value = document.getElementById("searchValue").value.trim();
-        if (value !== "" && !isNaN(value)) {
-            linkedList.search(parseInt(value));
-        } else {
-            alert("Please provide a valid value for Search.");
-        }
-    } else if (deleteFieldsVisible) {
-        let deleteindex = document.getElementById("deleteindex").value.trim();
-        if (deleteindex !== "" && !isNaN(deleteindex)) {
-            linkedList.deleteAt(parseInt(deleteindex));  // Corrected this line
-        } else {
-            alert("Please provide a valid index for deletion");
-        }
+    } finally {
+        isOperationRunning = false;
     }
-    
 }
 
 function resetInputs() {
-    document.getElementById("nodeValue").value = "";
-    document.getElementById("nodeIndex").value = "";
-    document.getElementById("deleteindex").value = "";
-    document.getElementById("searchValue").value = "";
+    ["nodeValues", "nodeValue", "nodeIndex", "deleteindex", "searchValue"].forEach(id => document.getElementById(id).value = "");
 }
 
-
-function showInsertFields() {
-    resetInputs()
-    document.getElementById('insertDeleteFields').style.display = 'block';
-    document.getElementById('searchField').style.display = 'none';
-    document.getElementById('deleteField').style.display = 'none';
-    document.getElementById('nodeValue').placeholder = 'Enter the Element';
-    document.getElementById('nodeIndex').placeholder = 'Enter the Index';
+function toggleFields(show) {
+    resetInputs();
+    document.getElementById('insertDeleteFields').style.display = show === "insert" ? 'block' : 'none';
+    document.getElementById('deleteField').style.display = show === "delete" ? 'block' : 'none';
+    document.getElementById('searchField').style.display = show === "search" ? 'block' : 'none';
     document.getElementById('runSimulationButton').style.display = 'block';
 }
 
-function showDeleteFields() {
-    resetInputs()
-    document.getElementById('deleteField').style.display = 'block';
-    document.getElementById('insertDeleteFields').style.display = 'none';
-    document.getElementById('searchField').style.display = 'none';
-    document.getElementById('deleteindex').placeholder = 'Enter the Index to Delete';
-    document.getElementById('runSimulationButton').style.display = 'block';
-}
-
-function showSearchField() {
-    resetInputs()
-    document.getElementById('insertDeleteFields').style.display = 'none';
-    document.getElementById('deleteField').style.display = 'none';
-    document.getElementById('searchField').style.display = 'block';
-    document.getElementById('runSimulationButton').style.display = 'block';
-}
+function showInsertFields() { toggleFields("insert"); }
+function showDeleteFields() { toggleFields("delete"); }
+function showSearchField() { toggleFields("search"); }
 
 function createList() {
-    let valuesInput = document.getElementById("nodeValues").value.trim();
-    if (!valuesInput) {
-        alert("Please enter values to create a list.");
-        return;
-    }
-
-    let values = valuesInput.split(",").map(num => parseInt(num.trim())).filter(num => !isNaN(num));
-
-    if (values.length === 0) {
-        alert("Invalid input. Enter numbers separated by commas.");
-        return;
-    }
-
+    const input = document.getElementById("nodeValues").value.trim();
+    if (!input) return alert("Enter values to create a list.");
+    const values = input.split(",").map(x => +x.trim()).filter(x => !isNaN(x));
+    if (!values.length) return alert("Invalid input. Use comma-separated numbers.");
+    if (values.length > 8) return alert("Max 8 values allowed.");
     linkedList.createFromValues(values);
     document.getElementById("operations").style.display = "block";
 }
