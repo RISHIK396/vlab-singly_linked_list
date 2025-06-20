@@ -601,11 +601,11 @@ if __name__ == "__main__":
 
           <div class="controls">
             <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
-            <button onclick="createList()">Create List</button>
+            <button id="first_button" onclick="createList()">Create List</button>
           </div>
 
           <div id="operations" style="display: none;">
-            <div class="controls">
+            <div class="controls_linked">
               <div id="button_god">
                 <button onclick="showInsertFields()">Insert</button>
                 <button onclick="showDeleteFields()">Delete</button>
@@ -632,7 +632,7 @@ if __name__ == "__main__":
                 <button id="runSimulationButton" style="display: none;" onclick="runSimulation()">Run
                   Simulation</button>
               </div>
-
+              <br/>
               <p id="searchResult"></p>
             </div>
           </div>
