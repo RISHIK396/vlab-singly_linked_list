@@ -734,15 +734,20 @@ input {
 .node-value {
     background: #f1f1f1;
     border-right: 2px solid #333;
+    border-radius: 10px 0px 0px 10px;
 }
 .node-pointer {
     position: relative;
+    border-radius: 0px 10px 10px 0px;
+
 }
 
 .arrow {
-    font-size: 50px;
     position: absolute;
-    top: 40%;
+    font-size: 50px;
+    font-weight: 200;
+
+    top: 46%;
     right: -35px;
     transform: translateY(-50%);
     transition: transform 0.3s, opacity 0.3s;
@@ -841,7 +846,8 @@ input {
     top: 2vh;
     width:100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap:6px;
     
 }
 
