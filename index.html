@@ -225,29 +225,59 @@
         <h3>Insertion-></h3>
         <br />
         <div class="content">
-          <p>The Procedure for Implementing Linked List</p>
-          <ol class="steps-list">
+          <p>The Procedure for Insertion in a Linked List</p>
+          <br/>
+          <ol class="steps-list" start="1">
             <li><b>At the begining:</b></li>
+            </ol>
             <ul type="i">
               <li>Create a new node.</li>
               <li>Point the new node’s next to the current head.</li>
               <li>Update the head to the new node.</li>
             </ul>
-            <li> <b>At the End:</b></li>
+            <ol class="steps-list" start="2"><li> <b>At the End:</b></li></ol>
             <ul>
               <li>Create a new node</li>
               <li>Traverse the list to find the new node</li>
               <li>Point the last node next to new node</li>
             </ul>
 
-            <li> <b>At a specific position:</b></li>
+            <ol class="steps-list" start="3"><li> <b>At a specific position:</b></li></ol>
             <ul>
               <li>Create a new node</li>
               <li>Traverse the list to the node just before the specified position.</li>
               <li>Update the pointers to insert the new node in the desired position.</li>
             </ul>
-          </ol>
           </li>
+        </div>
+        <br/>
+        <h3>Deletion-></h3>
+        <br/>
+        <div class="content">
+          <p>The procedure for Delting a Linked list</p>
+          <br/>
+          <ol>
+            <li><b>Delete from Beginning:</b></li></ol>
+            <ul>
+              <li> If head is None, return (list is empty).</li>
+              <li>Set head = head.next.</li>
+            </ul>
+
+            <ol start="2">
+            <li><b>Delete from End:</b></li></ol>
+            <ul>
+              <li>If head is None, return (list is empty).</li>
+              <li>Traverse to the second last node.</li>
+              <li>Set second_last.next = None. </li>
+            </ul>
+            
+            <ol start="3">
+            <li><b>Delete at a Specific Position:</b></li></ol>
+            <ul>
+              <li>If position is 1, update head = head.next.</li>
+              <li>Otherwise, traverse to the node before the desired position.</li>
+              <li>Set current_node.next = current_node.next.next.</li>
+            </ul>
         </div>
       </div>
 
