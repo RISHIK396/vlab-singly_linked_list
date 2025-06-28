@@ -429,7 +429,9 @@ input[type="radio"] {
 }
 
 .next-button, .save-button {
+  position:relative;
   padding: 10px 20px;
+  left:150vh;
   font-size: 16px;
   font-weight: bold;
   color: white;
@@ -858,85 +860,85 @@ input {
 
 #s2_img{
   position: relative;
-  height: 330px;
-  width: 690px;
+  /* height: 330px; */
+  width: 75vh;
 }
 
 #s3_img{
   position:relative;
-  height:280px;
-  width:650px;
-  left:50px;  
+  /* height:280px; */
+  width:80vh;
+  /* left:50px;   */
 }
 #s4_img{
   position:relative;
-  height: 514px;
-  width:770px;
-  left:2px;
+  height: 45vh;
+  /* width:770px; */
+  /* left:2px; */
 }
 #s5_img{
   position:relative;
-  left:40px;
-  height: 286px;
-  width:618px;
+  /* left:40px; */
+  /* height: 286px; */
+  width:70vh;
 }
 #s6_img{
   position: relative;
-  left:40px;
-  height:300px;
-  width:650px;
+  /* left:40px; */
+  /* height:300px; */
+  width:70vh;
 
 }
 
 #s7_img{
   position: relative;
-  left:40px;
-  height:240px;
-  width: 707px;
+  /* left:40px; */
+  /* height:240px; */
+  width: 75vh;
 }
 
 #s8_img{
   position: relative;
-  height: 335px;
-  left:65px;
-  width:657px;
+  /* height: 335px; */
+  /* left:65px; */
+  width:70vh;
   
 }
 
 #s9_img{
   position:relative;
-  height:271px;
-  width:656px;
-  left:34px;
+  /* height:271px; */
+  width:65vh;
+  /* left:34px; */
 }
 
 #s10_img{
   position:relative;
-  left:68px;
-  width:652px;
-  height:386px;
+  /* left:68px; */
+  width:65vh;
+  /* height:386px; */
 }
 
 #s11_img{
   position:relative;
-  width:618px;
-  left:40px;
-  height:256px;
+  width:70vh;
+  /* left:40px; */
+  /* height:256px; */
 }
 
 #s12_img{
   position:relative;
-  height:320px;
-  width:650px;
-  left:85px;
+  /* height:320px; */
+  width:65vh;
+  /* left:85px; */
 }
 
 
 #s13_img{
   position:relative;
-  height:219px;
-  width:635px;
-  left:74px;
+  /* height:219px; */
+  width:63vh;
+  /* left:74px; */
 }
 
 
@@ -954,3 +956,12 @@ input {
 }
 
 
+.content img{
+  display:flex;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.content{
+  text-align: left;
+}

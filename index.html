@@ -105,6 +105,7 @@
             A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes. Each node contains two
             parts:
           </p>
+          <br/>
           <ol>
             <li><b>Data : </b>The value stored in the node.</li>
             <li><b>Pointer : </b>The address of the next node in the list.</li>
@@ -114,16 +115,14 @@
           <h3><b>Example</b></h3>
           <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
           <h4><b>Operations : </b></h4>
-          <ol>
-            <li>
+          <ol start="1">
               <h2>INSERTION:</h2>
               <br />
-
-              <ul>
-                <li>
+              <li>
                   <b>Insertion At the beginning:</b>
                 </li>
-                <br />
+                </ol>
+              <ul>
                 <li>Create a new node </li>
                 <li>Set new_node's next(pointer) to <b>head</b> </li>
                 <li>Update <b>head</b> to new_node</li>
@@ -135,10 +134,12 @@
                 <br />
                 <img id="s3_img" src="s3.png" alt="start">
 
-                <li>
+                <ol start="2">
+                  <li>
                   <b>Insertion At the end:</b>
                 </li>
-                <br />
+                </ol>
+                <ul>
                 <li>Create a new node</li>
                 <li>If the list is empty, set <b>head = new_node</b></li>
                 <li>Otherwise, traverse to the last node. </li>
@@ -150,8 +151,8 @@
                 <h3>After insertion the linked list will look like</h3>
                 <img id="s7_img" src="s7.png" alt="s7_img">
 
-                <li><b>Insert At a specific position:</b></li>
-                <br />
+               <ol start="3"><li><b>Insert At a specific position:</b></li></ol>
+                <ul>
                 <li>Create a new node</li>
                 <li>Traverse to the new node before the desired position.</li>
                 <li>Update <b>new_node's next</b> to <b>current_node's next</b>.</li>
@@ -165,12 +166,11 @@
                 <br />
                 <img id="s5_img" src="s5.png" alt="s6_img">
               </ul>
-            <li>
-              <h2> <b>Deletion:</b></h2>
 
-              <ul>
-                <li><b>Deleting From beginning:</b></li>
-                <br />
+              <h2> <b>Deletion:</b></h2>
+              <br/>
+                <ol start="1"><li><b>Deleting From beginning:</b></li></ol>
+                <ul>
                 <li>Removes the first node of the list.</li>
                 <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
                 <li>Set <b>head = head's next</b></li>
@@ -183,8 +183,8 @@
                 <br />
 
 
-                <li><b>Deletion From the end of the Linked List:</b></li>
-                <br />
+              <ol start="2"><li><b>Deletion From the end of the Linked List:</b></li></ol>
+                <ul>
                 <li>Removes the last node of the list.</li>
                 <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
                 <li>Set <b>second_last_node's next = None</b></li>
@@ -196,9 +196,10 @@
                 <h3><b>After Deletion from the end, The Linked List will look like</b></h3>
                 <br />
                 <img id="s13_img" src="s13.png" alt="s13_img">
-                <li><b>Delete at a Specific Position:</b></li>
-                <br />
-                <li> Removes the node at a given index.</li>
+
+                <br/>
+                <ol start="3"><li><b>Delete at a Specific Position:</b></li></ol>
+                <li>Removes the node at a given index.</li>
                 <li>If position is 1,update <b>head = head's next</b></li>
                 <li>Otherwise, traverse to the node before the desired position.</li>
                 <li>Set <b>current_node's next = current_node's next of next</b></li>
@@ -305,7 +306,7 @@
         
         // Node class
         class Node {
-        private:
+          private:
             int data;
             Node* next;
         
@@ -645,6 +646,7 @@ if __name__ == "__main__":
                 <button onclick="showSearchField()">Search</button>
               </div>
               <div class="input-container">
+
                 <!-- Insert Fields -->
                 <div class="inputlist" id="insertDeleteFields" style="display: none;">
                   <input type="number" id="nodeValue" placeholder="Enter the Element">
@@ -652,8 +654,11 @@ if __name__ == "__main__":
                 </div>
 
                 <!-- Delete Fields -->
+
                 <div class="inputlist" id="deleteField" style="display: none;">
+                  <input type="number" id="deleteValue" placeholder="Enter Value to Delete">
                   <input type="number" id="deleteindex" placeholder="Enter Delete Index">
+
                 </div>
 
                 <!-- Search Field -->

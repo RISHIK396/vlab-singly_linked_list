@@ -86,7 +86,7 @@ document.querySelectorAll(".copy-button").forEach((button) => {
 const questions = [
    {
         question: "What is the advantage of using singly linked list over an array ? ",
-        choices: ["Faster Random Access Time", "Dynamic memory Allocation Without Predefined Size", "Lower Memory ", "Easier to Implement"],
+        choices: ["Faster Random Access Time", "Dynamic memory Allocation Without Predefined Size", "Lower Memory Usage", "Easier to Implement"],
         correctAnswers: [1]
     },
     {
@@ -112,7 +112,7 @@ const questions = [
 
     {
         question: "Q6) Is it possible to traverse a singly linked list backward ? If not, why ?",
-        choices:["Yes, by using a prev pointer","No, because to the next node","Yes, by reversing the list first","No, because singly linked lists are circular"],
+        choices:["Yes, by using a previous pointer","No, because the pointer points to the next node's address","Yes, by reversing the list first","No, because singly linked lists are circular"],
         correctAnswers:[1]
     },
   ];
@@ -376,6 +376,117 @@ class LinkedList {
         this.size--;
         this.display();
     }
+async deleteByValue(value) {
+    document.getElementById("searchResult").textContent = "";
+    if (!this.head) return alert("List is empty.");
+
+    const nodes = document.querySelectorAll(".node"),
+          arrows = document.querySelectorAll(".arrow"),
+          nodeVals = document.querySelectorAll(".node-value"),
+          head = document.querySelector(".head-pointer"),
+          headArrow = document.querySelector(".head-arrow"),
+          nullSign = document.querySelector(".null-sign");
+
+    // Reset previous styles
+    nodes.forEach(n => n.classList.remove("traverse-node", "blink-node", "blink-found"));
+    arrows.forEach(a => a.classList.remove("traverse-arrow"));
+    nodeVals.forEach(v => {
+        v.classList.remove("blink-node", "blink-found");
+        if (v.dataset.blinkInterval) clearInterval(v.dataset.blinkInterval);
+    });
+
+    let curr = this.head;
+    let prev = null;
+    let index = 1;
+
+    // Animate head
+    head.classList.add("blink-found");
+    await this.sleep(1000);
+    head.classList.remove("blink-found");
+    headArrow.classList.add("pointer-expands");
+    await this.sleep(1000);
+    headArrow.classList.remove("pointer-expands");
+
+    while (curr) {
+        const node = nodes[index - 1];
+        const arrow = arrows[index - 1];
+        const valDiv = node?.querySelector(".node-value");
+
+        if (curr.value === value) {
+            if (valDiv) valDiv.classList.add("blink-found");
+            await this.sleep(500);
+
+            if (node) {
+                node.style.transition = "opacity 0.5s";
+                node.style.opacity = "0";
+                await this.sleep(500);
+            }
+
+            if (prev === null) this.head = curr.next;
+            else prev.next = curr.next;
+
+            this.size--;
+            this.display();
+
+            document.getElementById("searchResult").textContent = `Deleted node with value: ${value}`;
+            return;
+        }
+
+        if (valDiv) {
+            valDiv.classList.add("blink-node");
+            await this.sleep(300);
+            valDiv.classList.remove("blink-node");
+        }
+
+        if (node) {
+            node.classList.add("traverse-node");
+            await this.sleep(400);
+        }
+
+        if (arrow) {
+            arrow.classList.add("traverse-arrow");
+            await this.sleep(400);
+        }
+
+        prev = curr;
+        curr = curr.next;
+        index++;
+    }
+
+    if (nullSign) {
+        nullSign.classList.add("blink-null");
+        await this.sleep(1000);
+        nullSign.classList.remove("blink-null");
+    }
+
+    alert("Value not found in the list.");
+}
+
+handleDeleteInput() {
+        const valueInput = document.getElementById("deleteValue").value.trim();
+        const indexInput = document.getElementById("deleteindex").value.trim();
+
+        if (valueInput && indexInput) {
+            alert("Please enter either a value OR an index — not both.");
+            return;
+        }
+
+        if (valueInput) {
+            if (!isNaN(valueInput)) {
+                linkedList.deleteByValue(+valueInput);
+            } else {
+                alert("Enter a valid number to delete by value.");
+            }
+        } else if (indexInput) {
+            if (!isNaN(indexInput)) {
+                linkedList.deleteAt(+indexInput);
+            } else {
+                alert("Enter a valid number to delete by index.");
+            }
+        } else {
+            alert("Please enter a value or an index to delete.");
+        }
+    }
 
     async search(value) {
         const nodes = document.querySelectorAll(".node"),
@@ -516,9 +627,7 @@ async function runSimulation() {
                 await linkedList.search(+val("searchValue"));
             else alert("Enter valid value.");
         } else if (delVis) {
-            if (val("deleteindex") && !isNaN(val("deleteindex")))
-                await linkedList.deleteAt(+val("deleteindex"));
-            else alert("Enter valid index.");
+            linkedList.handleDeleteInput();
         }
     } finally {
         isOperationRunning = false;
