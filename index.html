@@ -228,21 +228,21 @@
           <p>The Procedure for Insertion in a Linked List</p>
           <br/>
           <ol class="steps-list" start="1">
-            <li><b>At the begining:</b></li>
+            <li><b>Insertion At the begining:</b></li>
             </ol>
             <ul type="i">
               <li>Create a new node.</li>
               <li>Point the new node’s next to the current head.</li>
               <li>Update the head to the new node.</li>
             </ul>
-            <ol class="steps-list" start="2"><li> <b>At the End:</b></li></ol>
+            <ol class="steps-list" start="2"><li> <b> Insertion At the End:</b></li></ol>
             <ul>
               <li>Create a new node</li>
               <li>Traverse the list to find the new node</li>
               <li>Point the last node next to new node</li>
             </ul>
 
-            <ol class="steps-list" start="3"><li> <b>At a specific position:</b></li></ol>
+            <ol class="steps-list" start="3"><li> <b>Insertion in the middle of the linked list:</b></li></ol>
             <ul>
               <li>Create a new node</li>
               <li>Traverse the list to the node just before the specified position.</li>
@@ -257,14 +257,14 @@
           <p>The procedure for Delting a Linked list</p>
           <br/>
           <ol>
-            <li><b>Delete from Beginning:</b></li></ol>
+            <li><b>Deletion from the Start:</b></li></ol>
             <ul>
               <li> If head is None, return (list is empty).</li>
               <li>Set head = head.next.</li>
             </ul>
 
             <ol start="2">
-            <li><b>Delete from End:</b></li></ol>
+            <li><b>Deletion from the End:</b></li></ol>
             <ul>
               <li>If head is None, return (list is empty).</li>
               <li>Traverse to the second last node.</li>
@@ -272,7 +272,7 @@
             </ul>
             
             <ol start="3">
-            <li><b>Delete at a Specific Position:</b></li></ol>
+            <li><b>Delete from the middle:</b></li></ol>
             <ul>
               <li>If position is 1, update head = head.next.</li>
               <li>Otherwise, traverse to the node before the desired position.</li>
@@ -299,7 +299,8 @@
               <pre><code class="language-cpp">
         #C++ code        
 
-        #include \<iostream>\
+        <!-- &lt and &gt for including the angular brackets in html code -->
+        #include <pre>&lt;iostream&gt;</pre>
         using namespace std;
         
         // Node class
