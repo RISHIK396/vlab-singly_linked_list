@@ -101,11 +101,12 @@
       <div class="container" id="theory">
         <div class="title">Theory & Applications</div>
         <div class="content">
-          <p>
+         <p>
             A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes. Each node contains two
             parts:
           </p>
           <br/>
+          <div class="content_all">
           <ol>
             <li><b>Data : </b>The value stored in the node.</li>
             <li><b>Pointer : </b>The address of the next node in the list.</li>
@@ -116,7 +117,7 @@
           <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
           <h4><b>Operations : </b></h4>
           <ol start="1">
-              <h2>INSERTION:</h2>
+              <h2 >INSERTION:</h2>
               <br />
               <li>
                   <b>Insertion At the beginning:</b>
@@ -133,7 +134,7 @@
                 <h3>After Insertion the linked list will look like</h3>
                 <br />
                 <img id="s3_img" src="s3.png" alt="start">
-
+                </ul>
                 <ol start="2">
                   <li>
                   <b>Insertion At the end:</b>
@@ -150,6 +151,7 @@
                 <br />
                 <h3>After insertion the linked list will look like</h3>
                 <img id="s7_img" src="s7.png" alt="s7_img">
+                </ul>
 
                <ol start="3"><li><b>Insert At a specific position:</b></li></ol>
                 <ul>
@@ -166,7 +168,6 @@
                 <br />
                 <img id="s5_img" src="s5.png" alt="s6_img">
               </ul>
-
               <h2> <b>Deletion:</b></h2>
               <br/>
                 <ol start="1"><li><b>Deleting From beginning:</b></li></ol>
@@ -181,7 +182,7 @@
                 <br />
                 <img id="s9_img" src="s9.png" alt="s9_img">
                 <br />
-
+                </ul>
 
               <ol start="2"><li><b>Deletion From the end of the Linked List:</b></li></ol>
                 <ul>
@@ -196,13 +197,16 @@
                 <h3><b>After Deletion from the end, The Linked List will look like</b></h3>
                 <br />
                 <img id="s13_img" src="s13.png" alt="s13_img">
+                </ul>
 
                 <br/>
                 <ol start="3"><li><b>Delete at a Specific Position:</b></li></ol>
+                <ul>
                 <li>Removes the node at a given index.</li>
                 <li>If position is 1,update <b>head = head's next</b></li>
                 <li>Otherwise, traverse to the node before the desired position.</li>
                 <li>Set <b>current_node's next = current_node's next of next</b></li>
+                </ul>
                 <br />
                 <h3><b>Example-></b></h3>
                 <img id="s10_img" src="s10.png" alt="s10_img">
@@ -212,10 +216,8 @@
                 <br />
                 <img id="s11_img" src="s11.png" alt="s11_img">
                 <br />
-              </ul>
             </li>
-            </li>
-          </ol>
+          </div>
         </div>
 
       </div>
@@ -672,6 +674,7 @@ if __name__ == "__main__":
               </div>
               <br/>
               <p id="searchResult"></p>
+              <h4><b>Note: <big>" Φ "</big> represents to Null Pointer in the linked list</b></h4>
             </div>
           </div>
 
