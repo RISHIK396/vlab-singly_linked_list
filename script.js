@@ -334,7 +334,10 @@ class LinkedList {
         await this.traverseToIndex(index);
 
         const newNode = new Node(value);
-        if (index === 1) this.head = newNode, newNode.next = this.head;
+        if (index === 1){
+            newNode.next = this.head;
+            this.head = newNode;
+        }
         else {
             const prev = this.getNodeAt(index - 1);
             newNode.next = prev.next;
