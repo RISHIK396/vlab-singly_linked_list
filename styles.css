@@ -384,6 +384,8 @@ input[type="radio"] {
 
 /* Quiz */
 #quiz {
+  /* display: flex; */
+  /* flex-direction: column; */
   text-align: center;
   border-radius: 10px;
   padding: 20px;
@@ -430,8 +432,10 @@ input[type="radio"] {
 
 .next-button, .save-button {
   position:relative;
+  /* display: flex; */
+  /* justify-content: center; */
   padding: 10px 20px;
-  left:150vh;
+  left:75%;
   font-size: 16px;
   font-weight: bold;
   color: white;
