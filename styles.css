@@ -431,7 +431,7 @@ input[type="radio"] {
 .next-button, .save-button {
   position:relative;
   padding: 10px 20px;
-  left:150vh;
+  left:135vh;
   font-size: 16px;
   font-weight: bold;
   color: white;
