@@ -92,8 +92,8 @@
       <div class="container" id="aim">
         <div class="title">Aim</div>
         <div class="content">
-          <p> To understand the operations of a Singly Linked List (SLL), specifically the insertion of elements,
-            deletion of elements, and search of elements in various scenarios through visualization.</p>
+          <p> To demonstrate the working of a Singly Linked List (SLL), which includes its creation, traversal ,
+            insertion of elements, deletion of elements, and search for elements through visualization.</p>
         </div>
       </div>
 
@@ -101,124 +101,77 @@
       <div class="container" id="theory">
         <div class="title">Theory & Applications</div>
         <div class="content">
-         <p>
-            A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes. Each node contains two
-            parts:
+          <p>
+            A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes in which each node is
+            accessible through pointer stored in its immediate predecessor. Single linked list is traversed from first
+            node to the last node using pointers in the forward direction only. It is not feasible to randomly access
+            any element in the list. The first node is pointed by head node which contains the address of first node.
+            Initially, head is Null (∅) indicating empty linked list
           </p>
-          <br/>
+          <br />
           <div class="content_all">
-          <ol>
-            <li><b>Data : </b>The value stored in the node.</li>
-            <li><b>Pointer : </b>The address of the next node in the list.</li>
-          </ol>
-          <p>The first node is called the <b>head</b>, and the last node points to NULL, indicating the end of the list.
-          </p>
-          <br/>
-          <h3><b>Example</b></h3>
-          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
-          <h4><b>Operations : </b></h4>
-          <br/>
-          <ol start="1">
-              <h2 >INSERTION:</h2>
-              <br />
-              <li>
-                  <b>Insertion At the beginning:</b>
-                </li>
-                </ol>
-              <ul>
-                <li>Create a new node </li>
-                <li>Set new_node's next(pointer) to <b>head</b> </li>
-                <li>Update <b>head</b> to new_node</li>
-                <br />
-                <h3><b>Example-></b></h3>
-                <img id="s2_img" src="s2_new.png" alt="insertion_begining">
-                <br />
-                <h3>After Insertion the linked list will look like</h3>
-                <br />
-                <img id="s3_img" src="s3.png" alt="start">
-                </ul>
-                <ol start="2">
-                  <li>
-                  <b>Insertion At the end:</b>
-                </li>
-                </ol>
-                <ul>
-                <li>Create a new node</li>
-                <li>If the list is empty, set <b>head = new_node</b></li>
-                <li>Otherwise, traverse to the last node. </li>
-                <li>Set <b>last_node's next = new_node</b></li>
-                <br />
-                <h3><b>Example-></b></h3>
-                <img id="s6_img" src="s6.png" alt="s6_img">
-                <br />
-                <h3>After insertion the linked list will look like</h3>
-                <img id="s7_img" src="s7.png" alt="s7_img">
-                </ul>
+            <h3>Applications of Single Linked List</h3>
+            <br />
+            <ol start="1">
+            <li><b><big>📞 Call History in Your Phone</big></b></li>
+            </ol>
+            <p>Every time you make or receive a call, it's added to the top of your call history.</p>
+            <br />
+            <p><b>🔗 Like a Linked List:</b></p>
+            <p>Each call entry (node) points to the next recent call.</p>
+            <p>No random jumping — you check one call after another in sequence.📱</p>
 
-               <ol start="3"><li><b>Insert At a specific position:</b></li></ol>
-                <ul>
-                <li>Create a new node</li>
-                <li>Traverse to the new node before the desired position.</li>
-                <li>Update <b>new_node's next</b> to <b>current_node's next</b>.</li>
-                <li>Set <b>current_node's next = new_node.</b></li>
-                <br />
-                <h3><b>Example-></b></h3>
-                <br />
-                <img id="s4_img" src="s4.png" alt="s4_img">
+            <br/>
+            <br/>
+             <ol start="2">
+            <li><b><big>🎵 Music Playlist (Next Song Only Mode)</big></b></li>
+            </ol>
+            <p>Some music apps or MP3 players play songs one after another in order, without a "Previous" button.</p>
+            <br />
+            <p><b>🔗 Like a Singly Linked List:</b></p>
+            <p> Each song knows what comes next, but not what came before.🎶</p>
 
-                <h3><b>After insertion the linked list will look like</b></h3>
-                <br />
-                <img id="s5_img" src="s5.png" alt="s6_img">
-              </ul>
-              <h2> <b>Deletion:</b></h2>
               <br/>
-                <ol start="1"><li><b>Deleting From beginning:</b></li></ol>
-                <ul>
-                <li>Removes the first node of the list.</li>
-                <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
-                <li>Set <b>head = head's next</b></li>
-                <br />
-                <h3><b>Example-></b></h3>
-                <img id="s8_img" src="s8.png" alt="s8_img">
-                <h3><b>After Deletion the Liked List will look like</b></h3>
-                <br />
-                <img id="s9_img" src="s9.png" alt="s9_img">
-                <br />
-                </ul>
+            <br/>
+             <ol start="3">
+            <li><b><big> 📧 Undo Send in Emails</big></b></li>
+            </ol>
+            <p>Ever used the “Undo Send” feature? It temporarily stores sent emails in a stack-like structure.</p>
+            <br />
+            <p><b>🔗 Singly Linked List Behind the Scenes:</b></p>
+            <p> Each "undo-able" action is stacked in order. You can only go back step by step, like popping nodes from a linked list.📤
+            </p>
 
-              <ol start="2"><li><b>Deletion From the end of the Linked List:</b></li></ol>
-                <ul>
-                <li>Removes the last node of the list.</li>
-                <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
-                <li>Set <b>second_last_node's next = None</b></li>
-                <br />
-                <h3><b>Example-></b></h3>
-                <br />
-                <img id="s12_img" src="s12.png" alt="s12_img">
-                <br>
-                <h3><b>After Deletion from the end, The Linked List will look like</b></h3>
-                <br />
-                <img id="s13_img" src="s13.png" alt="s13_img">
-                </ul>
 
-                <br/>
-                <ol start="3"><li><b>Delete at a Specific Position:</b></li></ol>
-                <ul>
-                <li>Removes the node at a given index.</li>
-                <li>If position is 1,update <b>head = head's next</b></li>
-                <li>Otherwise, traverse to the node before the desired position.</li>
-                <li>Set <b>current_node's next = current_node's next of next</b></li>
-                </ul>
-                <br />
-                <h3><b>Example-></b></h3>
-                <img id="s10_img" src="s10.png" alt="s10_img">
-                <br />
+              <br/>
+            <br/>
+             <ol start="4">
+            <li><b><big>🛍️ Shopping Cart Checkout</big></b></li>
+            </ol>
+            <p>When you add items to your cart one by one and process them sequentially for billing.</p>
+            <br />
+            <p><b>🔗 Linked List Style:</b></p>
+            <p> Each item is added in a node. The cashier (or system) processes from head to end.🛒</p>
 
-                <h3><b>After Deletion from the middle the Linked List will look like</b></h3>
-                <br />
-                <img id="s11_img" src="s11.png" alt="s11_img">
-                <br />
-            </li>
+
+            <br/>
+            <br/>
+             <ol start="5">
+            <li><b><big>🧵 Task List / To-Do Apps</big></b></li>
+            </ol>
+            <p>Imagine tasks are stored in order of creation, and you do them one by one.</p>
+            <br />
+            <p><b>🔗 To-Do Tasks as Nodes:</b></p>
+            <b><p>✅</b></p>
+
+            <br/>
+            <br/>
+             <ol start="6">
+            <li><b><big>🧠 Memory Management in OS</big></b></li>
+            </ol>
+            <p>Operating systems use linked lists to manage memory blocks — especially for free space!</p>
+            <br />
+            <p><b>💻 Each memory block points to the next available block:</b></p>
           </div>
         </div>
 
@@ -227,62 +180,127 @@
       <!-- Procedure -->
       <div class="container" id="procedure">
         <div class="title">Procedure</div>
-        <h3>Insertion-></h3>
-        <br />
         <div class="content">
-          <p>The Procedure for Insertion in a Linked List</p>
-          <br/>
-          <ol class="steps-list" start="1">
-            <li><b>Insertion At the begining:</b></li>
-            </ol>
-            <ul type="i">
-              <li>Create a new node.</li>
-              <li>Point the new node’s next to the current head.</li>
-              <li>Update the head to the new node.</li>
-            </ul>
-            <ol class="steps-list" start="2"><li> <b> Insertion At the End:</b></li></ol>
-            <ul>
-              <li>Create a new node</li>
-              <li>Traverse the list to find the new node</li>
-              <li>Point the last node next to new node</li>
-            </ul>
-
-            <ol class="steps-list" start="3"><li> <b>Insertion in the middle of the linked list:</b></li></ol>
-            <ul>
-              <li>Create a new node</li>
-              <li>Traverse the list to the node just before the specified position.</li>
-              <li>Update the pointers to insert the new node in the desired position.</li>
-            </ul>
-          </li>
-        </div>
-        <br/>
-        <h3>Deletion-></h3>
-        <br/>
-        <div class="content">
-          <p>The procedure for Delting a Linked list</p>
-          <br/>
           <ol>
-            <li><b>Deletion from the Start:</b></li></ol>
-            <ul>
-              <li> If head is None, return (list is empty).</li>
-              <li>Set head = head.next.</li>
-            </ul>
+            <li><b>Data : </b>The value stored in the node.</li>
+            <li><b>Pointer : </b>The address of the next node in the list.</li>
+          </ol>
+          <p>The first node is called the <b>head</b>, and the last node points to NULL, indicating the end of the list.
+          </p>
+          <br />
+          <h3><b>Example</b></h3>
+          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
+          <h4><b>Operations : </b></h4>
+          <br />
+          <ol start="1">
+            <h2>INSERTION:</h2>
+            <br />
+            <li>
+              <b>Insertion At the beginning:</b>
+            </li>
+          </ol>
+          <ul>
+            <li>Create a new node </li>
+            <li>Set new_node's next(pointer) to <b>head</b> </li>
+            <li>Update <b>head</b> to new_node</li>
+            <br />
+            <h3><b>Example-></b></h3>
+            <img id="s2_img" src="s2_new.png" alt="insertion_begining">
+            <br />
+            <h3>After Insertion the linked list will look like</h3>
+            <br />
+            <img id="s3_img" src="s3.png" alt="start">
+          </ul>
+          <ol start="2">
+            <li>
+              <b>Insertion At the end:</b>
+            </li>
+          </ol>
+          <ul>
+            <li>Create a new node</li>
+            <li>If the list is empty, set <b>head = new_node</b></li>
+            <li>Otherwise, traverse to the last node. </li>
+            <li>Set <b>last_node's next = new_node</b></li>
+            <br />
+            <h3><b>Example-></b></h3>
+            <img id="s6_img" src="s6.png" alt="s6_img">
+            <br />
+            <h3>After insertion the linked list will look like</h3>
+            <img id="s7_img" src="s7.png" alt="s7_img">
+          </ul>
 
-            <ol start="2">
-            <li><b>Deletion from the End:</b></li></ol>
-            <ul>
-              <li>If head is None, return (list is empty).</li>
-              <li>Traverse to the second last node.</li>
-              <li>Set second_last.next = None. </li>
-            </ul>
-            
-            <ol start="3">
-            <li><b>Deletion from the middle:</b></li></ol>
-            <ul>
-              <li>If position is 1, update head = head.next.</li>
-              <li>Otherwise, traverse to the node before the desired position.</li>
-              <li>Set current_node.next = current_node.next.next.</li>
-            </ul>
+          <ol start="3">
+            <li><b>Insert At a specific position:</b></li>
+          </ol>
+          <ul>
+            <li>Create a new node</li>
+            <li>Traverse to the new node before the desired position.</li>
+            <li>Update <b>new_node's next</b> to <b>current_node's next</b>.</li>
+            <li>Set <b>current_node's next = new_node.</b></li>
+            <br />
+            <h3><b>Example-></b></h3>
+            <br />
+            <img id="s4_img" src="s4.png" alt="s4_img">
+
+            <h3><b>After insertion the linked list will look like</b></h3>
+            <br />
+            <img id="s5_img" src="s5.png" alt="s6_img">
+          </ul>
+          <h2> <b>Deletion:</b></h2>
+          <br />
+          <ol start="1">
+            <li><b>Deleting From beginning:</b></li>
+          </ol>
+          <ul>
+            <li>Removes the first node of the list.</li>
+            <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
+            <li>Set <b>head = head's next</b></li>
+            <br />
+            <h3><b>Example-></b></h3>
+            <img id="s8_img" src="s8.png" alt="s8_img">
+            <h3><b>After Deletion the Liked List will look like</b></h3>
+            <br />
+            <img id="s9_img" src="s9.png" alt="s9_img">
+            <br />
+          </ul>
+
+          <ol start="2">
+            <li><b>Deletion From the end of the Linked List:</b></li>
+          </ol>
+          <ul>
+            <li>Removes the last node of the list.</li>
+            <li>If <b>head</b> is <b>None,</b> return (list is empty)</li>
+            <li>Set <b>second_last_node's next = None</b></li>
+            <br />
+            <h3><b>Example-></b></h3>
+            <br />
+            <img id="s12_img" src="s12.png" alt="s12_img">
+            <br>
+            <h3><b>After Deletion from the end, The Linked List will look like</b></h3>
+            <br />
+            <img id="s13_img" src="s13.png" alt="s13_img">
+          </ul>
+
+          <br />
+          <ol start="3">
+            <li><b>Delete at a Specific Position:</b></li>
+          </ol>
+          <ul>
+            <li>Removes the node at a given index.</li>
+            <li>If position is 1,update <b>head = head's next</b></li>
+            <li>Otherwise, traverse to the node before the desired position.</li>
+            <li>Set <b>current_node's next = current_node's next of next</b></li>
+          </ul>
+          <br />
+          <h3><b>Example-></b></h3>
+          <img id="s10_img" src="s10.png" alt="s10_img">
+          <br />
+
+          <h3><b>After Deletion from the middle the Linked List will look like</b></h3>
+          <br />
+          <img id="s11_img" src="s11.png" alt="s11_img">
+          <br />
+          </li>
         </div>
       </div>
 
@@ -306,191 +324,145 @@
 
         <!-- &lt and &gt for including the angular brackets in html code -->
         #include <pre>&lt;iostream&gt;</pre>
-        using namespace std;
-        
-        // Node class
-        class Node {
-          private:
-            int data;
-            Node* next;
-        
-        public:
-            Node(int value) { // Constructor to initialize a node
-                data = value;
-                next = nullptr;
-            }
-        
-            friend class SinglyLinkedList;
-        };
-        
-        // Singly Linked List class
-        class SinglyLinkedList {
-        private:
-            Node* head; // Pointer to the first node
-        
-        public:
-            // Constructor
-            SinglyLinkedList() {
-                head = nullptr;
-            }
-        
-            // Insert at the start
-            void insertAtStart(int value) {
-                Node* newNode = new Node(value);
-                newNode->next = head;
-                head = newNode;
-            }
-        
-            // Insert at the end
-            void insertAtEnd(int value) {
-                Node* newNode = new Node(value);
-                if (!head) { // If the list is empty
-                    head = newNode;
-                    return;
-                }
-                Node* temp = head;
-                while (temp->next) {
-                    temp = temp->next;
-                }
-                temp->next = newNode;
-            }
-        
-            // Insert in the middle (after a given value)
-            void insertAfter(int target, int value) {
-                Node* temp = head;
-                while (temp && temp->data != target) {
-                    temp = temp->next;
-                }
-                if (temp) { // If the target node is found
-                    Node* newNode = new Node(value);
-                    newNode->next = temp->next;
-                    temp->next = newNode;
-                } else {
-                    cout << "Target value not found!\n";
-                }
-            }
-        
-            // Delete at the start
-            void deleteAtStart() {
-                if (!head) { // If the list is empty
-                    cout << "List is empty!\n";
-                    return;
-                }
-                Node* temp = head;
-                head = head->next;
+              using namespace std;
+
+              // Node class
+              class Node {
+              private:
+              int data;
+              Node* next;
+
+              public:
+              Node(int value) { // Constructor to initialize a node
+              data = value;
+              next = nullptr;
+              }
+
+              friend class SinglyLinkedList;
+              };
+
+              // Singly Linked List class
+              class SinglyLinkedList {
+              private:
+              Node* head; // Pointer to the first node
+
+              public:
+              // Constructor
+              SinglyLinkedList() {
+              head = nullptr;
+              }
+
+              // Insert at the start
+              void insertAtStart(int value) {
+              Node* newNode = new Node(value);
+              newNode->next = head;
+              head = newNode;
+              }
+
+              // Insert at the end
+              void insertAtEnd(int value) {
+              Node* newNode = new Node(value);
+              if (!head) { // If the list is empty
+              head = newNode;
+              return;
+              }
+              Node* temp = head;
+              while (temp->next) {
+              temp = temp->next;
+              }
+              temp->next = newNode;
+              }
+
+              // Insert in the middle (after a given value)
+              void insertAfter(int target, int value) {
+              Node* temp = head;
+              while (temp && temp->data != target) {
+              temp = temp->next;
+              }
+              if (temp) { // If the target node is found
+              Node* newNode = new Node(value);
+              newNode->next = temp->next;
+              temp->next = newNode;
+              } else {
+              cout << "Target value not found!\n" ; } } // Delete at the start void deleteAtStart() { if (!head) { // If
+                the list is empty cout << "List is empty!\n" ; return; } Node* temp=head; head=head->next;
                 delete temp;
-            }
-        
-            // Delete at the end
-            void deleteAtEnd() {
+                }
+
+                // Delete at the end
+                void deleteAtEnd() {
                 if (!head) { // If the list is empty
-                    cout << "List is empty!\n";
-                    return;
-                }
-                if (!head->next) { // If there is only one node
-                    delete head;
-                    head = nullptr;
-                    return;
-                }
-                Node* temp = head;
-                while (temp->next->next) {
-                    temp = temp->next;
-                }
-                delete temp->next;
-                temp->next = nullptr;
-            }
-        
-            // Delete in the middle (specific value)
-            void deleteValue(int value) {
-                if (!head) { // If the list is empty
-                    cout << "List is empty!\n";
-                    return;
-                }
-                if (head->data == value) { // If the value is at the start
+                cout << "List is empty!\n" ; return; } if (!head->next) { // If there is only one node
+                  delete head;
+                  head = nullptr;
+                  return;
+                  }
+                  Node* temp = head;
+                  while (temp->next->next) {
+                  temp = temp->next;
+                  }
+                  delete temp->next;
+                  temp->next = nullptr;
+                  }
+
+                  // Delete in the middle (specific value)
+                  void deleteValue(int value) {
+                  if (!head) { // If the list is empty
+                  cout << "List is empty!\n" ; return; } if (head->data == value) { // If the value is at the start
                     Node* temp = head;
                     head = head->next;
                     delete temp;
                     return;
-                }
-                Node* temp = head;
-                while (temp->next && temp->next->data != value) {
+                    }
+                    Node* temp = head;
+                    while (temp->next && temp->next->data != value) {
                     temp = temp->next;
-                }
-                if (temp->next) { // If the value is found
+                    }
+                    if (temp->next) { // If the value is found
                     Node* toDelete = temp->next;
                     temp->next = temp->next->next;
                     delete toDelete;
-                } else {
-                    cout << "Value not found!\n";
-                }
-            }
-        
-            // Search for a value
-            bool search(int value) {
-                Node* temp = head;
-                while (temp) {
-                    if (temp->data == value) {
-                        return true;
-                    }
-                    temp = temp->next;
-                }
-                return false;
-            }
-        
-            // Display the list
-            void display() {
-                Node* temp = head;
-                while (temp) {
-                    cout << temp->data << " -> ";
-                    temp = temp->next;
-                }
-                cout << "NULL\n";
-            }
-        
-            // Destructor to free memory
-            ~SinglyLinkedList() {
-                Node* temp;
-                while (head) {
-                    temp = head;
-                    head = head->next;
-                    delete temp;
-                }
-            }
-        };
-        
-        int main() {
-            SinglyLinkedList list;
-        
-            // Test insertion
-            list.insertAtStart(10);
-            list.insertAtStart(20);
-            list.insertAtEnd(30);
-            list.insertAfter(10, 25);
-        
-            cout << "List after insertions: ";
-            list.display();
-        
-            // Test deletion
-            list.deleteAtStart();
-            cout << "List after deleting at start: ";
-            list.display();
-        
-            list.deleteAtEnd();
-            cout << "List after deleting at end: ";
-            list.display();
-        
-            list.deleteValue(25);
-            cout << "List after deleting value 25: ";
-            list.display();
-        
-            // Test search
-            cout << "Searching for 10: " << (list.search(10) ? "Found" : "Not Found") << "\n";
-            cout << "Searching for 40: " << (list.search(40) ? "Found" : "Not Found") << "\n";
-        
-            return 0;
-        }
-                </code></pre>
-              <button class="copy-button">Copy</button>
+                    } else {
+                    cout << "Value not found!\n" ; } } // Search for a value bool search(int value) { Node* temp=head;
+                      while (temp) { if (temp->data == value) {
+                      return true;
+                      }
+                      temp = temp->next;
+                      }
+                      return false;
+                      }
+
+                      // Display the list
+                      void display() {
+                      Node* temp = head;
+                      while (temp) {
+                      cout << temp->data << " -> " ; temp=temp->next;
+                          }
+                          cout << "NULL\n" ; } // Destructor to free memory ~SinglyLinkedList() { Node* temp; while
+                            (head) { temp=head; head=head->next;
+                            delete temp;
+                            }
+                            }
+                            };
+
+                            int main() {
+                            SinglyLinkedList list;
+
+                            // Test insertion
+                            list.insertAtStart(10);
+                            list.insertAtStart(20);
+                            list.insertAtEnd(30);
+                            list.insertAfter(10, 25);
+
+                            cout << "List after insertions: " ; list.display(); // Test deletion list.deleteAtStart();
+                              cout << "List after deleting at start: " ; list.display(); list.deleteAtEnd(); cout
+                              << "List after deleting at end: " ; list.display(); list.deleteValue(25); cout
+                              << "List after deleting value 25: " ; list.display(); // Test search cout
+                              << "Searching for 10: " << (list.search(10) ? "Found" : "Not Found" ) << "\n" ; cout
+                              << "Searching for 40: " << (list.search(40) ? "Found" : "Not Found" ) << "\n" ; return 0;
+                              } </code>
+                              </pre>
+                              <button class="copy-button">Copy</button>
             </div>
           </div>
           <div id="pythonCode" class="code-block">
@@ -633,8 +605,12 @@ if __name__ == "__main__":
       <div class="container" id="practice">
         <div class="title">Practice</div>
         <div class="content">
-          <h4 id="instruction">In the Practice section of the simulation, you can visualize how a singly linked list works by performing insert, delete, and search operations. Start by entering comma-separated values (up to 8 nodes max) and clicking "Create List" to generate the linked list. You can then choose an operation—Insert, Delete, or Search—and provide the necessary input (like value and index). Click "Run Simulation" to see the action animated step-by-step, showing how nodes are traversed, added, removed, or found.</h4>
-          <br/>
+          <h4 id="instruction">In the Practice section of the simulation, you can visualize how a singly linked list
+            works by performing insert, delete, and search operations. Start by entering comma-separated values (up to 8
+            nodes max) and clicking "Create List" to generate the linked list. You can then choose an operation—Insert,
+            Delete, or Search—and provide the necessary input (like value and index). Click "Run Simulation" to see the
+            action animated step-by-step, showing how nodes are traversed, added, removed, or found.</h4>
+          <br />
           <h1 id="head1">Singly Linked List Visualization</h1>
 
           <div class="controls">
@@ -674,7 +650,7 @@ if __name__ == "__main__":
                 <button id="runSimulationButton" style="display: none;" onclick="runSimulation()">Run
                   Simulation</button>
               </div>
-              <br/>
+              <br />
               <p id="searchResult"></p>
               <h4><b>Note: <big>"∅"</big> represents to the Null Pointer in the linked list</b></h4>
             </div>
@@ -720,10 +696,9 @@ if __name__ == "__main__":
         <div class="title">References</div>
         <div class="content">
           <ul class="ref-list">
-            <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C. (2022). Introduction to
-                Algorithms, Fourth Edition. United Kingdom: MIT Press.</span></li>
-            <li><span>Bhargava, A. (2016). Grokking Algorithms: An Illustrated Guide for Programmers and
-                Other Curious People. United States: Manning.</span></li>
+            <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms.
+                MIT press.</span></li>
+            <li><span>Bhargava, A., & Bhargava, A. Y. (2024). Grokking algorithms. Simon and Schuster.</span></li>
             <li><span>A Complete Overview on: Web Development
                 By- Ayush Mauryavanshi
               </span></li>
@@ -742,9 +717,11 @@ if __name__ == "__main__":
             <li><a href="https://github.com/KeshavKhari" rel="noopener" target="_blank"><span>Keshav Khari - B. Sc. (H)
                   CS 3<sup>rd</sup> Year</span></a></li>
           </ul>
-          <h3>Mentor</h3>
+          <h3>Mentors</h3>
           <ul class="ref-list">
             <li><span>Mrs Priyanka Sharma</span></li>
+            <li><span>Prof. Sharanjit Kaur</span></li>
+
           </ul>
           <h3>Tools Used</h3>
           <ul class="tools-list">
@@ -770,3 +747,74 @@ if __name__ == "__main__":
 </body>
 
 </html>
+
+
+
+
+
+<!-- 
+
+-->
+
+
+
+
+<!-- 
+        <h3>Insertion-></h3>
+        <br />
+        content wala part down
+
+<p>The Procedure for Insertion in a Linked List</p>
+          <br/>
+          <ol class="steps-list" start="1">
+            <li><b>Insertion At the begining:</b></li>
+            </ol>
+            <ul type="i">
+              <li>Create a new node.</li>
+              <li>Point the new node’s next to the current head.</li>
+              <li>Update the head to the new node.</li>
+            </ul>
+            <ol class="steps-list" start="2"><li> <b> Insertion At the End:</b></li></ol>
+            <ul>
+              <li>Create a new node</li>
+              <li>Traverse the list to find the new node</li>
+              <li>Point the last node next to new node</li>
+            </ul>
+
+            <ol class="steps-list" start="3"><li> <b>Insertion in the middle of the linked list:</b></li></ol>
+            <ul>
+              <li>Create a new node</li>
+              <li>Traverse the list to the node just before the specified position.</li>
+              <li>Update the pointers to insert the new node in the desired position.</li>
+            </ul>
+          </li>
+        </div>
+        <br/>
+        <h3>Deletion-></h3>
+        <br/>
+        <div class="content">
+          <p>The procedure for Delting a Linked list</p>
+          <br/>
+          <ol>
+            <li><b>Deletion from the Start:</b></li></ol>
+            <ul>
+              <li> If head is None, return (list is empty).</li>
+              <li>Set head = head.next.</li>
+            </ul>
+
+            <ol start="2">
+            <li><b>Deletion from the End:</b></li></ol>
+            <ul>
+              <li>If head is None, return (list is empty).</li>
+              <li>Traverse to the second last node.</li>
+              <li>Set second_last.next = None. </li>
+            </ul>
+            
+            <ol start="3">
+            <li><b>Deletion from the middle:</b></li></ol>
+            <ul>
+              <li>If position is 1, update head = head.next.</li>
+              <li>Otherwise, traverse to the node before the desired position.</li>
+              <li>Set current_node.next = current_node.next.next.</li>
+            </ul>
+-->
