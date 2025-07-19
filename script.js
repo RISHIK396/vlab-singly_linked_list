@@ -272,7 +272,7 @@ const questions = [
   
   showQuestion();
 
-  // practise script js
+  // practice script js
 
   class Node {
     constructor(value) {
@@ -379,6 +379,7 @@ class LinkedList {
         this.size--;
         this.display();
     }
+
 async deleteByValue(value) {
     document.getElementById("searchResult").textContent = "";
     if (!this.head) return alert("List is empty.");
@@ -390,7 +391,6 @@ async deleteByValue(value) {
           headArrow = document.querySelector(".head-arrow"),
           nullSign = document.querySelector(".null-sign");
 
-    // Reset previous styles
     nodes.forEach(n => n.classList.remove("traverse-node", "blink-node", "blink-found"));
     arrows.forEach(a => a.classList.remove("traverse-arrow"));
     nodeVals.forEach(v => {
@@ -401,8 +401,6 @@ async deleteByValue(value) {
     let curr = this.head;
     let prev = null;
     let index = 1;
-
-    // Animate head
     head.classList.add("blink-found");
     await this.sleep(1000);
     head.classList.remove("blink-found");
@@ -462,25 +460,26 @@ async deleteByValue(value) {
         nullSign.classList.remove("blink-null");
     }
 
+
     alert("Value not found in the list.");
+
 }
+
+
 
 handleDeleteInput() {
         const valueInput = document.getElementById("deleteValue").value.trim();
         const indexInput = document.getElementById("deleteindex").value.trim();
 
-        if (valueInput && indexInput) {
-            alert("Please enter either a value OR an index — not both.");
-            return;
-        }
-
         if (valueInput) {
+            document.getElementById("deleteindex").disabled = true;
             if (!isNaN(valueInput)) {
                 linkedList.deleteByValue(+valueInput);
             } else {
                 alert("Enter a valid number to delete by value.");
             }
         } else if (indexInput) {
+            document.getElementById("deleteValue").disabled = true;
             if (!isNaN(indexInput)) {
                 linkedList.deleteAt(+indexInput);
             } else {
@@ -489,6 +488,7 @@ handleDeleteInput() {
         } else {
             alert("Please enter a value or an index to delete.");
         }
+        resetDeleteFields();
     }
 
     async search(value) {
@@ -567,6 +567,13 @@ handleDeleteInput() {
     display() {
         const listContainer = document.getElementById("linkedList");
         listContainer.innerHTML = "";
+        
+        if (!this.head) {
+            listContainer.textContent = "Empty list";
+            alert("List is now Empty, Create a New list to Continue")
+            return;
+        }
+        
         let curr = this.head, index = 1;
 
         while (curr) {
@@ -603,6 +610,7 @@ handleDeleteInput() {
             setTimeout(() => node.classList.remove("blink-node"), 500);
         }
     }
+
 }
 
 const linkedList = new LinkedList();
@@ -637,22 +645,6 @@ async function runSimulation() {
     }
 }
 
-function resetInputs() {
-    ["nodeValues", "nodeValue", "nodeIndex", "deleteindex", "searchValue"].forEach(id => document.getElementById(id).value = "");
-}
-
-function toggleFields(show) {
-    resetInputs();
-    document.getElementById('insertDeleteFields').style.display = show === "insert" ? 'block' : 'none';
-    document.getElementById('deleteField').style.display = show === "delete" ? 'block' : 'none';
-    document.getElementById('searchField').style.display = show === "search" ? 'block' : 'none';
-    document.getElementById('runSimulationButton').style.display = 'block';
-}
-
-function showInsertFields() { toggleFields("insert"); }
-function showDeleteFields() { toggleFields("delete"); }
-function showSearchField() { toggleFields("search"); }
-
 function createList() {
     const input = document.getElementById("nodeValues").value.trim();
     if (!input) return alert("Enter values to create a list.");
@@ -661,4 +653,80 @@ function createList() {
     if (values.length > 8) return alert("Max 8 values allowed.");
     linkedList.createFromValues(values);
     document.getElementById("operations").style.display = "block";
+    document.getElementById("nodeValues").disabled = true;
+    document.getElementById("first_button").disabled = true;
+
 }
+
+function resetInputs() {
+    ["nodeValue", "nodeIndex", "deleteindex", "deleteValue", "searchValue"].forEach(id => document.getElementById(id).value = "");
+}
+
+function toggleFields(show) {
+    resetInputs();
+    document.getElementById('insertDeleteFields').style.display = show === "insert" ? 'block' : 'none';
+    document.getElementById('deleteField').style.display = show === "delete" ? 'block' : 'none';
+    document.getElementById('searchField').style.display = show === "search" ? 'block' : 'none';
+    document.getElementById('runSimulationButton').style.display = 'block';
+    document.getElementById('searchResult').textContent = "";
+}
+
+function showInsertFields() { toggleFields("insert"); }
+function showDeleteFields() { toggleFields("delete"); }
+function showSearchField() { toggleFields("search"); }
+
+
+
+
+
+document.getElementById("deleteValue").addEventListener("input", function () {
+    const value = this.value.trim();
+    const indexField = document.getElementById("deleteindex");
+    indexField.disabled = value.length > 0;
+    indexField.title = "Either Enter Index or Value not Both"
+
+});
+
+document.getElementById("deleteindex").addEventListener("input", function () {
+    const index = this.value.trim();
+    const valueField = document.getElementById("deleteValue");
+    valueField.disabled = index.length > 0;
+    valueField.title = "Either Enter Index or Value not Both"
+
+});
+
+function resetDeleteFields() {
+    const valueField = document.getElementById("deleteValue");
+    const indexField = document.getElementById("deleteindex");
+
+    valueField.disabled = false;
+    indexField.disabled = false;
+
+    valueField.value = "";
+    indexField.value = "";
+}
+
+
+document.getElementById("deleteTabButton").addEventListener("click", () => {
+    resetDeleteFields();
+});
+
+function reset() {
+  document.getElementById("nodeValues").value = "";
+  document.getElementById("insertDeleteFields").style.display = "none";
+  document.getElementById("deleteField").style.display = "none";
+  document.getElementById("searchField").style.display = "none";
+  document.getElementById("nodeValue").value = "";
+  document.getElementById("nodeIndex").value = "";
+  document.getElementById("deleteValue").value = "";
+  document.getElementById("deleteindex").value = "";
+  document.getElementById("searchValue").value = "";
+  document.getElementById("searchResult").innerText = "";
+  document.getElementById("runSimulationButton").style.display = "none";
+  document.getElementById("linkedList").innerHTML = "";
+  document.getElementById("operations").style.display = "none";
+  document.getElementById("nodeValues").disabled = false;
+  document.getElementById("first_button").disabled = false;
+}
+
+console.log("Done Successfully")

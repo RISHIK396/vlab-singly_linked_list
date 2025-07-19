@@ -967,3 +967,27 @@ input {
   /* align-items: center; */
 }
 
+.content img{
+  left:10%;
+}
+
+/* To remove input Spinner */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+input:disabled,
+button:disabled {
+  background-color: transparent;
+  color: grey;
+  border: 1px solid #ccc;
+  cursor: not-allowed;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}

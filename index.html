@@ -196,7 +196,8 @@ Data:
             This section presents illustrations of key operations on a singly linked list, including insertions at indices 0, 3, and 4, as well as deletions from the same positions. These operations will be demonstrated on an initial linked list comprising four nodes: Node A, Node B, Node C, and Node D.
 
           </p>
-
+          <br/>
+          <br/>
           <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
           
           <br />
@@ -283,7 +284,7 @@ Data:
         #C++ code        
 
         <!-- &lt and &gt for including the angular brackets in html code -->
-        #include <pre>&lt;iostream&gt;</pre>
+              #include &lt;iostream&gt;
               using namespace std;
 
               // Node class
@@ -576,13 +577,14 @@ if __name__ == "__main__":
           <div class="controls">
             <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
             <button id="first_button" onclick="createList()">Create List</button>
+            <button id="reset_button" onclick="reset()">Reset List</button>
           </div>
 
           <div id="operations" style="display: none;">
             <div class="controls_linked">
               <div id="button_god">
                 <button onclick="showInsertFields()">Insert</button>
-                <button onclick="showDeleteFields()">Delete</button>
+                <button id="deleteTabButton" onclick="showDeleteFields()">Delete</button>
                 <button onclick="showSearchField()">Search</button>
               </div>
               <div class="input-container">
