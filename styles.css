@@ -1077,12 +1077,3 @@ button:disabled {
     color:yellow;
     border-color: black;
 }
-
-  /* ul {
-    list-style-position: outside;
-    padding-left: 1.2em; /* add some padding for bullet */
-  }
-
-  li {
-    margin-bottom: 0.5em; /* optional spacing between items */
-  } */
