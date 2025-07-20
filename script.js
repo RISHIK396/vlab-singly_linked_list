@@ -83,194 +83,296 @@ document.querySelectorAll(".copy-button").forEach((button) => {
 });
 
 // Quiz Logic
-const questions = [
-   {
-        question: "What is the advantage of using singly linked list over an array ? ",
-        choices: ["Faster Random Access Time", "Dynamic memory Allocation Without Predefined Size", "Lower Memory Usage", "Easier to Implement"],
-        correctAnswers: [1]
-    },
+options = [
     {
-        question: " Q2) In a Singly Linked List, how do you delete the last node?",
-        choices: ["Update the second last node’s next to NULL.", " Update the last node's data to NULL.", "Update the head to NULL.", " It is not possible to delete the last node."],
-        correctAnswers: [0]
-    },
-    {
-        question: " Q3) What does the next pointer in a node of a Singly Linked List represent?",
-        choices: ["Points to the previous node.", "Points to the next node.", " Points to the head.", "Points to NULL."],
-        correctAnswers: [1]
-    },
-    {
-        question: " Q4) Which operation is faster in a Singly Linked List compared to an array?",
-        choices: [" Searching for an element.", "Accessing the middle element.", " Inserting an element at the beginning.", "Inserting an element at the end."],
-        correctAnswers: [2]
-    },
-    {
-        question: " Q5) In a Singly Linked List, if the head is NULL, what does it indicate?",
-        choices: ["The list has one node.", "The list is empty.", "The list has an infinite loop.", "The list contains only NULL values"],
-        correctAnswers: [1]
+        question:
+            " Q.1) Which of the following is true about the structure of a node in a singly linked list?",
+        optionSelect: [
+            "A) A node contains data and a pointer to the previous node.",
+            "B) A node contains only data.",
+            "C) A node contains data and a pointer to the next node.",
+            "D) A node contains pointers to both previous and next nodes.",
+        ],
+        answer: [2],
+        explanation: `<h3>In a singly linked list, each node contains two components:</h3>
+        <ul>
+            <li>Data: the actual value.</li>
+            <li>Next: a pointer/reference to the next node in the sequence.</li>
+        </ul>
+        `
     },
 
     {
-        question: "Q6) Is it possible to traverse a singly linked list backward ? If not, why ?",
-        choices:["Yes, by using a previous pointer","No, because the pointer points to the next node's address","Yes, by reversing the list first","No, because singly linked lists are circular"],
-        correctAnswers:[1]
+        question: " Q.2) What is the time complexity of inserting a node at the beginning of a singly linked list?",
+        optionSelect: [
+            "A) O(n)",
+            "B) O(1)",
+            "C) O(log n)",
+            "D) O(n log n)",
+        ],
+        answer: [1],
+        explanation: `<h3>Inserting at the beginning involves:</h3>
+        <ol>
+        <li>Creating a new node.</li>
+        <li>Creating a new node.</li>
+        <li>Updating the head to this new node.</li><br/>
+        <h3>All these are constant-time operations.</h3>        
+        </ol>
+        `
     },
-  ];
-  
-  let currentQuestionIndex = 0;
-  let score = 0;
-  let userAnswers = []; // Array to store user answers as an array of selected indexes
-  
-  const questionElement = document.getElementById("question");
-  const choicesContainer = document.getElementById("choices");
-  const saveButton = document.getElementById("save-btn");
-  const nextButton = document.getElementById("next-btn");
-  const retakeButton = document.getElementById("retake-btn");
-  const quizReport = document.getElementById("quiz-report");
-  
-  function showQuestion() {
-      let currentQuestion = questions[currentQuestionIndex];
-      questionElement.textContent = currentQuestion.question;
-      choicesContainer.innerHTML = "";
-  
-      currentQuestion.choices.forEach((choice, index) => {
-          const button = document.createElement("button");
-          button.textContent = choice;
-          button.classList.add("choice");
-          button.addEventListener("click", () => toggleSelection(index)); // Listen for user selection
-          choicesContainer.appendChild(button);
-      });
-  
-      saveButton.style.display = "block"; // Show the save button
-      nextButton.style.display = "none"; // Hide the next button initially
-      retakeButton.style.display = "none"; // Hide the retake button
-      saveButton.disabled = true; // Disable save button initially
-  }
-  
-  function toggleSelection(selectedIndex) {
-      // Toggle selection for multiple answers
-      if (!userAnswers[currentQuestionIndex]) {
-          userAnswers[currentQuestionIndex] = [];
-      }
-  
-      const answerIndex = userAnswers[currentQuestionIndex].indexOf(selectedIndex);
-  
-      if (answerIndex > -1) {
-          // Remove the selection if already selected
-          userAnswers[currentQuestionIndex].splice(answerIndex, 1);
-      } else {
-          // Add the selection
-          userAnswers[currentQuestionIndex].push(selectedIndex);
-      }
-  
-      // Highlight selected buttons
-      const choiceButtons = document.querySelectorAll(".choice");
-      choiceButtons.forEach((button, index) => {
-          if (userAnswers[currentQuestionIndex].includes(index)) {
-              button.style.backgroundColor = "#4285F4"; // Selected answer color
-              button.style.color = "white";
-          } else {
-              button.style.backgroundColor = "#f1f1f1"; // Reset other button colors
-              button.style.color = "black";
-          }
-      });
-  
-      // Enable the Save button if there is at least one selection
-      saveButton.disabled = userAnswers[currentQuestionIndex].length === 0;
-  }
-  
-  function saveAnswer() {
-      // Show the Next button once the answer is saved
-      nextButton.style.display = "block";
-      saveButton.style.display = "none"; // Hide the Save button
-      saveButton.disabled = true; // Disable the Save button after saving the answer
-  }
-  
-  function checkAnswer() {
-      const correctAnswers = questions[currentQuestionIndex].correctAnswers;
-      const userAnswer = userAnswers[currentQuestionIndex];
-  
-      // Check if the user's selected answers match the correct ones
-      if (arraysEqual(correctAnswers, userAnswer)) {
-          score++; // Increment score if the answer is correct
-      }
-  
-      nextButton.style.display = "none"; // Hide the Next button
-      if (currentQuestionIndex < questions.length - 1) {
-          // Move to the next question
-          currentQuestionIndex++;
-          showQuestion();
-      } else {
-          showResults();
-      }
-  }
-  
-  function arraysEqual(a, b) {
-      return a.length === b.length && a.every((val, index) => val === b[index]);
-  }
-  
-  function showResults() {
-      questionElement.textContent = `Quiz Completed! Your Score: ${score} / ${questions.length}`;
-      choicesContainer.innerHTML = "";
-      saveButton.style.display = "none";
-      nextButton.style.display = "none";
-      retakeButton.style.display = "block";
-  
-      // Display quiz report
-      displayQuizReport();
-  }
-  
-  function displayQuizReport() {
-      quizReport.style.display = "block"; // Show the report section
-      quizReport.innerHTML = ""; // Clear previous report
-      
-      const reporttitle = document.createElement("h3");
-      reporttitle.textContent = "Quiz Report"; // Set the title
-      quizReport.appendChild(reporttitle);
 
-      questions.forEach((question, index) => {
-          const userAnswer = userAnswers[index] || [];
-          const correctAnswer = question.correctAnswers;
-          const questionDiv = document.createElement("div");
-          questionDiv.classList.add("quiz-report-question");
-  
-          const questionText = document.createElement("p");
-          questionText.textContent = `${question.question}`;
-          questionDiv.appendChild(questionText);
-  
-          const choicesList = document.createElement("ul");
-          question.choices.forEach((choice, i) => {
-              const choiceItem = document.createElement("li");
-              const isSelected = userAnswer.includes(i);
-              const isCorrect = correctAnswer.includes(i);
-  
-              // Highlight correct and incorrect answers
-              if (isSelected) {
-                  choiceItem.textContent = choice;
-                  choiceItem.style.backgroundColor = isCorrect ? "green" : "red";
-                  choiceItem.style.color = "white";
-              }
-  
-              choicesList.appendChild(choiceItem);
-          });
-  
-          questionDiv.appendChild(choicesList);
-          quizReport.appendChild(questionDiv);
-      });
-  }
-  
-  retakeButton.addEventListener("click", () => {
-      currentQuestionIndex = 0;
-      score = 0;
-      userAnswers = [];
-      quizReport.style.display = "none"; // Hide the report on retake
-      showQuestion();
-  });
-  
-  saveButton.addEventListener("click", saveAnswer);
-  nextButton.addEventListener("click", checkAnswer);
-  
-  showQuestion();
+        {
+            question:
+                " Q.3) In a Singly Linked List, how do you delete the last node?",
+            optionSelect: [
+                "A) Update the second last node’s next to NULL.",
+                "B) Update the last node's data to NULL. ",
+                "C) Update the head to NULL. ",
+                "D) It is not possible to delete the last node.",
+            ],
+            answer: [0],
+            explanation:`<h3>We delete the last node in a singly linked list by setting the second last node’s next pointer to
+    NULL.</h3>`
+
+        },
+
+        {
+            question:
+                " Q.4) What does the next pointer in a node of a Singly Linked List represent?",
+            optionSelect: [
+                "A) Points to the previous node.",
+                "B) Points to the next node.",
+                "C) Points to the head.",
+                "D) Points to NULL."
+            ],
+            answer: [1],
+            explanation:`The next pointer stores the address of the next node in the sequence, enabling forward traversal.`
+        },
+        {
+            question:
+                " Q5) In a Singly Linked List, if the head is NULL, what does it indicate?",
+            optionSelect: [
+                "A) The list has one node.",
+                "B) The list is empty.",
+                "C) The list has an infinite loop.",
+                "D) The list contains only NULL values",
+            ],
+            answer: [1],
+            explanation:`If the head is NULL, it means there are no nodes in the list — the list is empty.`
+        },
+
+        {
+            question:
+                "Q6)Which application commonly uses singly linked lists for efficient memory management?",
+            optionSelect: [
+                "A) Image compression",
+                "B) Operating system's memory allocation",
+                "C) Database indexing",
+                "D) Sorting algorithms",
+            ],
+            answer: [1],
+            explanation:`Singly linked lists are used to manage free and allocated memory blocks in dynamic
+    memory allocation.`
+        },
+         {
+            question:
+                "Q7) Why are singly linked lists suitable for implementing \"undo\" operations in text editors?",
+            optionSelect: [
+                "A) They support binary search.",
+                "B) They allow backward traversal.",
+                "C) They efficiently insert and remove actions at the beginning.",
+                "D) They store characters in ASCII format.",
+            ],
+            answer: [2],
+            explanation:`Undo operations require quick updates at the head, which singly linked lists support
+    in constant time.`
+        }, 
+];
+
+
+
+let your_ans = [];
+let questions = document.querySelector("#question");
+
+let index = 0;
+questions.innerText = options[index].question;
+optionSelect(index);
+
+let quiz = document.querySelector("#quiz_main");
+
+let result = document.querySelector("#result1");
+result.style.display = "none";
+
+// score of quiz
+let selectIndex = null;
+let score = 0;
+
+function optionSelect(index1) {
+    // clearing previous button
+
+    let options1 = document.querySelector("#options");
+    options1.innerHTML = "";
+    // restore previous answer
+    for (let i = 0; i < options[index1].optionSelect.length; i++) {
+        let op = document.createElement("button");  
+
+
+        // adding option in the button and appending into the html
+        op.innerText = options[index1].optionSelect[i];
+        options1.append(op);
+
+        // retain option
+        if (your_ans[index] === i) {
+            op.style.backgroundColor = "rgb(21, 148, 252)";
+            op.style.color = "black";
+            op.style.borderColor = "black";
+        }
+
+        op.onclick = function () {
+            selectIndex = i;
+            your_ans[index] = i;
+            op.style.backgroundColor = "white";
+            op.style.color = "black";
+            op.style.borderColor = "black";
+        }
+
+        op.addEventListener("click", () => {
+            selectIndex = i;
+            optionSelect(index); // re-render with selection
+        });
+        options1.appendChild(op);
+    }
+}
+
+// summary of the quiz
+function summary(ans) {
+    for (let i = 0; i < ans.length; i++) {
+        let questionBlock = document.createElement("div");
+        questionBlock.style.marginBottom = "20px";
+        questionBlock.style.padding = "10px";
+        questionBlock.style.border = "3px solid #ccc";
+        questionBlock.style.borderRadius = "10px";
+        // questionBlock.lineHeight = "1.8";
+
+        let questionTitle = document.createElement("h3");
+        questionTitle.innerText = options[i].question;
+        questionBlock.appendChild(questionTitle);
+
+        let yourAnswer = document.createElement("h3");
+        let actual_ans = options[i].answer[0];
+        let explanation = document.createElement("div");
+        if (ans[i] === actual_ans) {
+            yourAnswer.innerText = `✅${options[i].optionSelect[ans[i]]}`;
+            yourAnswer.style.backgroundColor = "lightgreen";
+            // explanation
+            explanation.innerHTML = `<h2><b>Explanation:<b/></h2>${options[i].explanation}`;
+        }
+        else {
+            yourAnswer.innerText = `❌ ${options[i].optionSelect[ans[i]]}`;
+            yourAnswer.style.backgroundColor = "#f98";
+
+        }
+        questionBlock.appendChild(yourAnswer);
+        if (ans[i] != options[i].answer[0]) {
+            let correct_ans = document.createElement("h3");
+            correct_ans.innerText = `✅ ${options[i].optionSelect[options[i].answer[0]]}`;
+            correct_ans.style.backgroundColor = "lightgreen";
+            questionBlock.appendChild(correct_ans);
+
+            // explanation
+            explanation.innerHTML = `<h2><b>Explanation:<b/></h2>${options[i].explanation}`;
+        }
+        explanation.style.fontSize = "15px";
+        explanation.style.textAlign = "left";
+        explanation.style.marginLeft = "10px";
+        questionBlock.appendChild(explanation);
+
+        result.appendChild(questionBlock);
+
+    }
+}
+
+
+// next button functinality
+function next_ques() {
+    if (options[index].answer[0] === selectIndex) {
+        your_ans[index] = selectIndex;  //save only when next is clicked
+        score++;
+    } 
+    
+    else if (selectIndex === null) {
+        alert("⚠️ Please Select an Option Then Proceed Forward");
+        return;
+    }
+
+    if (index < options.length - 1) {
+        index += 1;
+        questions.innerHTML = options[index].question;
+        optionSelect(index);
+        selectIndex = null;
+    }
+
+    else {
+        quiz.style.display = "none";
+        result.style.display = "flex";
+        result.style.textAlign = "left";
+        result.style.flexDirection = "column";
+        result.style.alignItem = "center";  
+        
+
+        let score_finish = document.createElement("h3");
+
+        if (score === options.length) {
+            score_finish.innerText = `🏆 Perfect! Your Score: ${score}/${options.length}`;
+        } else if (score >= options.length * 0.8) {
+            score_finish.innerText = `🎉 Great Job! Your Score: ${score}/${options.length}`;
+        } else if (score >= options.length * 0.5) {
+            score_finish.innerText = `👍 Not Bad! Your Score: ${score}/${options.length}`;
+        } else {
+            score_finish.innerText = `😐 Keep Practicing! Your Score: ${score}/${options.length}`;
+        }
+        score_finish.style.fontSize = "28px";
+        score_finish.style.border = "2px solid grey";
+        score_finish.style.borderRadius = "5px";
+        score_finish.style.margin="20px";
+        score_finish.style.textAlign = "center";
+        result.append(score_finish);
+        result.append(score_finish);
+
+        // for (let i = 0; i < your_ans.length; i++) {
+        //     console.log(your_ans[i]);
+        // }
+        summary(your_ans);
+        document.getElementById("retake").style.display = "inline";
+    }
+}
+
+let back = document.querySelector("#back");
+
+function back_ques() {
+    if (index > 0) {
+        index--;
+        questions.innerHTML = options[index].question;
+        optionSelect(index);
+    }
+}
+
+function retakeQuiz() {
+    index = 0;
+    score = 0;
+    your_ans = [];
+    selectIndex = null;
+
+    document.querySelector("#result1").style.display = "none";
+    document.querySelector("#retake").style.display = "none";
+    document.querySelector("#quiz_main").style.display = "block";
+
+    document.querySelector("#result1").innerHTML = ""; // clear previous summary
+    questions.innerText = options[index].question;
+    optionSelect(index);
+
+}
+
 
   // practice script js
 

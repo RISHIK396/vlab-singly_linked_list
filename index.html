@@ -641,16 +641,27 @@ if __name__ == "__main__":
 
       <!-- Quiz -->
       <div class="container" id="quiz">
-        <div class="title">Quiz</div>
-        <p id="question"></p>
-        <div id="choices" class="choices"></div>
-        <button id="save-btn" class="save-button">Save</button>
-        <button id="next-btn" class="next-button" style="display: none">
-          Next
-        </button>
-        <button id="retake-btn" style="display: none">Retake Quiz</button>
-        <div id="quiz-report" style="display: none"></div>
-        <!-- Section to display quiz report -->
+           <h1 id="quiz_head">📝 Quiz</h1>
+    <div id="quiz_main">
+    <!-- <br/> -->
+    <h3 id="question">Question</h3>
+    <br/>
+    <div id="options">
+
+    </div>
+
+    <div id="last_btn">
+        <button id="back" onclick=back_ques()>⬅️ Back</button>
+        <button id="next" onclick=next_ques()>Next ➡️</button>
+    </div>
+</div>
+
+    <div id="result1">
+        <h1>📜Summary</h1>
+    </div>
+       <button id="retake" onclick="retakeQuiz()">
+  🔁 Retake Quiz
+    </button>
       </div>
 
       <!-- References -->
