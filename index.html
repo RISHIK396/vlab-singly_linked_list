@@ -115,17 +115,17 @@
           <span>
             <ul>
               <li>
-                <big><b>Data :</b></big>
+                <p><b>Data :</b></p>
               </li>
-              <big>This stores the actual value or information (e.g., an integer, string, object, etc.).</big>
-              <span><big>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
+              <p>This stores the actual value or information (e.g., an integer, string, object, etc.).</p>
+              <span>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
             </ul>
             <ul>
-              <li>
-                <big><b>Pointer (or Next):</b></big>
+              <li>  
+                <p><b>Pointer (or Next):</b></p>
               </li>
-              <span><big>This holds the reference or address of the next node in the list. If it's the last node, the
-                  pointer is usually set to null (or None in Python).</big></span>
+              <span><p>This holds the reference or address of the next node in the list. If it's the last node, the
+                  pointer is usually set to null (or None in Python).</p></span>
             </ul>
           </span>
           <br />
@@ -668,8 +668,10 @@ if __name__ == "__main__":
 
           <div class="controls">
             <input type="text" id="nodeValues" placeholder="Enter values (e.g., 10,20,30)">
-            <button id="first_button" onclick="createList()">Create List</button>
+           <div id="two_butt">
+             <button id="first_button" onclick="createList()">Create List</button>
             <button id="reset_button" onclick="reset()">Reset List</button>
+           </div>
           </div>
 
           <div id="operations" style="display: none;">
@@ -722,10 +724,7 @@ if __name__ == "__main__":
         <div class="title">Result</div>
         <div class="content">
           <p>
-            The Singly Linked List simulation successfully implemented insertion, deletion, and search operations. Nodes
-            were correctly inserted at different positions, deleted as per specified conditions, and searched
-            efficiently, returning the position if found or "not found" if not present. The operations performed as
-            expected.
+           The designed virtual lab (VLab) demonstrated the implementation of a singly linked list with a maximum of eight elements in an interactive way. It successfully allowed users to perform key operations such as insertion, deletion, and search, visually showcasing the step-by-step pointer adjustments involved in each operation and reinforcing the underlying logic of linked list manipulation.
           </p>
         </div>
       </div>

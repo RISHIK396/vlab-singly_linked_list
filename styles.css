@@ -634,8 +634,15 @@ input[type="radio"] {
 #first_button:hover {
     background: #0056b3;
 }
+#reset_button{
+    background: #007bff;
+    color: white;
+    margin: 15px;
+}
 
-
+#reset_button:hover {
+    background: #0056b3;
+}
  
 
 input, .inputlist input {
@@ -648,8 +655,9 @@ input, .inputlist input {
     text-align: center;
 }
 
-input {
-    width: 350px;
+#nodeValues{
+    width: 320px;
+    height: 35px;
 }
 .inputlist input {
     width: 200px;
@@ -940,11 +948,14 @@ input {
 }
 
 .controls{
-  width: 100%;
+  /* width: 100%; */
   display:flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 10px;
 }
+
 
 
 /* .content img{
@@ -1016,7 +1027,7 @@ button:disabled {
 
 #options button:hover{
     background-color: rgb(21, 148, 252);
-    color:black;
+    color:white;
     border-color: black;
     font-weight: 400;
 }
@@ -1076,4 +1087,14 @@ button:disabled {
     background-color: rgb(15, 169, 25);
     color:yellow;
     border-color: black;
+}
+
+/* procedure */
+#theory ul, #procedure ul, #theory ol, #procedure ol {
+    list-style: none;
+    padding-left: 51px;
+    margin-bottom: 20px;
+    list-style-position: inside;
+    font-size: 1rem;
+    color: #333;
 }
