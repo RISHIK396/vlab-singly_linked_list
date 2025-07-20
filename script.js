@@ -295,7 +295,7 @@ function summary(ans) {
 
 // next button functinality
 function next_ques() {
-    if (options[index].answer[0] === selectIndex) {
+    if (index<options.length && options[index].answer[0] === selectIndex) {
         your_ans[index] = selectIndex;  //save only when next is clicked
         score++;
     } 
