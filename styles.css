@@ -1051,7 +1051,7 @@ button:disabled {
     margin-right:80px;
     background: transparent;
     border: 2px solid black;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #next:hover{
