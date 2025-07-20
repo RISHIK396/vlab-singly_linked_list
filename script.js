@@ -86,7 +86,7 @@ document.querySelectorAll(".copy-button").forEach((button) => {
 options = [
     {
         question:
-            " Q.1) Which of the following is true about the structure of a node in a singly linked list?",
+            " Q1) Which of the following is true about the structure of a node in a singly linked list?",
         optionSelect: [
             "A) A node contains data and a pointer to the previous node.",
             "B) A node contains only data.",
@@ -103,7 +103,7 @@ options = [
     },
 
     {
-        question: " Q.2) What is the time complexity of inserting a node at the beginning of a singly linked list?",
+        question: " Q2) What is the time complexity of inserting a node at the beginning of a singly linked list?",
         optionSelect: [
             "A) O(n)",
             "B) O(1)",
@@ -123,7 +123,7 @@ options = [
 
         {
             question:
-                " Q.3) In a Singly Linked List, how do you delete the last node?",
+                " Q3) In a Singly Linked List, how do you delete the last node?",
             optionSelect: [
                 "A) Update the second last node’s next to NULL.",
                 "B) Update the last node's data to NULL. ",
@@ -138,7 +138,7 @@ options = [
 
         {
             question:
-                " Q.4) What does the next pointer in a node of a Singly Linked List represent?",
+                " Q4) What does the next pointer in a node of a Singly Linked List represent?",
             optionSelect: [
                 "A) Points to the previous node.",
                 "B) Points to the next node.",

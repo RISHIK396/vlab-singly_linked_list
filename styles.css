@@ -430,21 +430,6 @@ input[type="radio"] {
   color: #fff;
 }
 
-.next-button, .save-button {
-  position:relative;
-  /* display: flex; */
-  /* justify-content: center; */
-  padding: 10px 20px;
-  left:75%;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
 .next-button:hover {
   background-color: #0056b3;
@@ -1048,7 +1033,7 @@ button:disabled {
 
 
 #next{
-    margin-right:80px;
+    margin-right:10px;
     background: transparent;
     border: 2px solid black;
     font-weight: 400;
@@ -1059,11 +1044,10 @@ button:disabled {
     color:black;
     border-color: black;
     font-weight: 600;
-    /* color:rgb(4, 71, 21); */
 }
 
 #back{
-    margin-left:50px;
+    margin-left:30px;
     background: transparent;
     border: 2px solid black;
 }
@@ -1072,7 +1056,6 @@ button:disabled {
     color:black;
     border-color: black;
     font-weight: 600;
-    /* color:rgb(4, 71, 21); */
 }
 
 #result1 h1{
@@ -1095,3 +1078,11 @@ button:disabled {
     border-color: black;
 }
 
+  /* ul {
+    list-style-position: outside;
+    padding-left: 1.2em; /* add some padding for bullet */
+  }
+
+  li {
+    margin-bottom: 0.5em; /* optional spacing between items */
+  } */

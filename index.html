@@ -108,79 +108,101 @@
             any element in the list. The first node is pointed by head node which contains the address of first node.
             Initially, head is Null (∅) indicating empty linked list.
           </p>
-          <p>
-            In a Singly Linked List, each node contains two components:
-Data:
- This stores the actual value or information (e.g., an integer, string, object, etc.).
- Example: 5, "Hello", {name: "Alice", age: 30}, etc.
+          <br />
 
- Pointer (or next address):
- This holds the reference or address of the next node in the list.
- If it's the last node, the pointer is usually set to null (or None in Python).
-          </p>
+          <h3>In a Singly Linked List, each node contains two components:</h3>
+          <span>
+            <ul>
+              <li>
+                <big><b>Data :</b></big>
+              </li>
+              <big>This stores the actual value or information (e.g., an integer, string, object, etc.).</big>
+              <span><big><b>Example :</b></big>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
+            </ul>
+            <ul>
+              <li>
+                <big><b>Pointer (or next address):</b></big>
+              </li>
+              <span><big>This holds the reference or address of the next node in the list. If it's the last node, the
+                  pointer is usually set to null (or None in Python).</big></span>
+            </ul>
+          </span>
           <br />
           <div class="content_all">
-            <h3>Applications of Single Linked List</h3>
+            <h1>Applications of Singly Linked List: </h1>
             <br />
             <ol start="1">
-            <li><b><big>Call History in Your Phone</big></b></li>
+              <li><b> Dynamic Memory Allocation : </b></li>
             </ol>
-            <p>Every time you make or receive a call, it's added to the top of your call history.</p>
-            <br />
-            <p><b>Like a Linked List:</b></p>
-            <p>Each call entry (node) points to the next recent call.</p>
-            <p>No random jumping — you check one call after another in sequence.</p>
-
-            <br/>
-            <br/>
-             <ol start="2">
-            <li><b><big>Music Playlist (Next Song Only Mode)</big></b></li>
+            <ul>
+              <li><b> Use-case : </b></li>
+              <p>Operating Systems and memory managers.</p>
+              <br />
+              <li><b>Explanation : </b></li>
+              <p>Singly linked lists are used to keep track of free and allocated memory blocks in heap management. Each
+                memory block contains a pointer to the next block</p>
+              <br />
+              <li><b>Application : </b></li>
+              <p>Efficient insertion and deletion of memory blocks.</p>
+            </ul>
+            <ol start="2">
+              <li><b>Undo Functionality in Applications</b></li>
             </ol>
-            <p>Some music apps or MP3 players play songs one after another in order, without a "Previous" button.</p>
-            <br />
-            <p><b>Like a Singly Linked List:</b></p>
-            <p> Each song knows what comes next, but not what came before.</p>
-
-              <br/>
-            <br/>
-             <ol start="3">
-            <li><b><big>Undo Send in Emails</big></b></li>
+            <ul>
+              <li><b> Use-case : </b></li>
+              <p> Text editors like Microsoft Word, Google Docs.</p>
+              <br />
+              <li><b>Explanation : </b></li>
+              <p>Each action (e.g., typing a letter) is stored as a node. Pressing "undo"
+                traverses back through the actions using the links.</p>
+              <br />
+              <li><b>Application : </b></li>
+              <p> Enables efficient rollback of previous operations.</p>
+            </ul>
+            <ol start="3">
+              <li><b>Web Browser Forward Navigation</b></li>
             </ol>
-            <p>Ever used the “Undo Send” feature? It temporarily stores sent emails in a stack-like structure.</p>
-            <br />
-            <p><b>Singly Linked List Behind the Scenes:</b></p>
-            <p> Each "undo-able" action is stacked in order. You can only go back step by step, like popping nodes from a linked list.
-            </p>
-
-
-              <br/>
-            <br/>
-             <ol start="4">
-            <li><b><big>Shopping Cart Checkout</big></b></li>
+            <ul>
+              <li><b> Use-case : </b></li>
+              <p> Web browsers.</p>
+              <br />
+              <li><b>Explanation : </b></li>
+              <p>While back navigation uses a stack, forward navigation (redoing pages) can
+                be managed using a singly linked list.</p>
+              <br />
+              <li><b>Application : </b></li>
+              <p> Allows efficient forward traversal through visited pages.</p>
+            </ul>
+            <ol start="4">
+              <li><b> Polynomial Arithmetic</b></li>
             </ol>
-            <p>When you add items to your cart one by one and process them sequentially for billing.</p>
-            <br />
-            <p><b>Linked List Style:</b></p>
-            <p> Each item is added in a node. The cashier (or system) processes from head to end.🛒</p>
-
-
-            <br/>
-            <br/>
-             <ol start="5">
-            <li><b><big>Task List / To-Do Apps</big></b></li>
+            <ul>
+              <li><b> Use-case : </b></li>
+              <p> Scientific and Engineering computations.</p>
+              <br />
+              <li><b>Explanation : </b></li>
+              <p> Polynomials can be represented as a linked list where each node holds a
+                coefficient and exponent.</p>
+              <br />
+              <li><b>Application : </b></li>
+              <p> Enables efficient polynomial addition, subtraction, and multiplication without
+                memory waste.</p>
+            </ul>
+            <ol start="5">
+              <li><b>Real-time Task Scheduling</b></li>
             </ol>
-            <p>Imagine tasks are stored in order of creation, and you do them one by one.</p>
-            <br />
-            <p><b>To-Do Tasks as Nodes:</b></p>
-
-            <br/>
-            <br/>
-             <ol start="6">
-            <li><b><big>Memory Management in OS</big></b></li>
-            </ol>
-            <p>Operating systems use linked lists to manage memory blocks — especially for free space!</p>
-            <br />
-            <p><b>Each memory block points to the next available block:</b></p>
+            <ul>
+              <li><b> Use-case : </b></li>
+              <p> Embedded systems and OS kernels.</p>
+              <br />
+              <li><b>Explanation : </b></li>
+              <p> A task queue can be implemented as a singly linked list where each task is a
+                node.</p>
+              <br />
+              <li><b>Application : </b></li>
+              <p> Easy insertion of new tasks and deletion of completed ones in linear time.
+              </p>
+            </ul>
           </div>
         </div>
 
@@ -190,18 +212,20 @@ Data:
       <div class="container" id="procedure">
         <div class="title">Procedure</div>
         <div class="content">
-          <br/>
+          <br />
           <br />
           <p>
-            This section presents illustrations of key operations on a singly linked list, including insertions at indices 0, 3, and 4, as well as deletions from the same positions. These operations will be demonstrated on an initial linked list comprising four nodes: Node A, Node B, Node C, and Node D.
+            This section presents illustrations of key operations on a singly linked list, including insertions at
+            indices 0, 3, and 4, as well as deletions from the same positions. These operations will be demonstrated on
+            an initial linked list comprising four nodes: Node A, Node B, Node C, and Node D.
 
           </p>
-          <br/>
-          <br/>
-          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
-          
           <br />
-            <br />
+          <br />
+          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
+
+          <br />
+          <br />
           <ul>
 
             <br />
@@ -215,53 +239,53 @@ Data:
           <ol start="2">
             <li>
 
-          <ul>
-            <br />
+              <ul>
+                <br />
 
-            <img id="s6_img" src="s6.png" alt="s6_img">
-            <br />
+                <img id="s6_img" src="s6.png" alt="s6_img">
+                <br />
 
-            <img id="s7_img" src="s7.png" alt="s7_img">
-          </ul>
+                <img id="s7_img" src="s7.png" alt="s7_img">
+              </ul>
 
-            <br />
+              <br />
 
-            <br />
-            <img id="s4_img" src="s4.png" alt="s4_img">
-            <br />
-            <img id="s5_img" src="s5.png" alt="s6_img">
-          </ul>
+              <br />
+              <img id="s4_img" src="s4.png" alt="s4_img">
+              <br />
+              <img id="s5_img" src="s5.png" alt="s6_img">
+              </ul>
 
-          <br />
-          <ol start="1">
+              <br />
+              <ol start="1">
 
-            <img id="s8_img" src="s8.png" alt="s8_img">
+                <img id="s8_img" src="s8.png" alt="s8_img">
 
-            <br />
-            <img id="s9_img" src="s9.png" alt="s9_img">
-            <br />
-          </ul>
+                <br />
+                <img id="s9_img" src="s9.png" alt="s9_img">
+                <br />
+                </ul>
 
 
-            <br />
+                <br />
 
-            <br />
-            <img id="s12_img" src="s12.png" alt="s12_img">
-            <br>
+                <br />
+                <img id="s12_img" src="s12.png" alt="s12_img">
+                <br>
 
-            <br />
-            <img id="s13_img" src="s13.png" alt="s13_img">
-          </ul>
+                <br />
+                <img id="s13_img" src="s13.png" alt="s13_img">
+                </ul>
 
-          <br />
-          <br />
+                <br />
+                <br />
 
-          <img id="s10_img" src="s10.png" alt="s10_img">
-          <br />
-          <br />
-          <img id="s11_img" src="s11.png" alt="s11_img">
-          <br />
-          </li>
+                <img id="s10_img" src="s10.png" alt="s10_img">
+                <br />
+                <br />
+                <img id="s11_img" src="s11.png" alt="s11_img">
+                <br />
+            </li>
         </div>
       </div>
 
@@ -423,7 +447,7 @@ Data:
                               << "Searching for 40: " << (list.search(40) ? "Found" : "Not Found" ) << "\n" ; return 0;
                               } </code>
                               </pre>
-                              <button class="copy-button">Copy</button>
+              <button class="copy-button">Copy</button>
             </div>
           </div>
           <div id="pythonCode" class="code-block">
@@ -641,27 +665,27 @@ if __name__ == "__main__":
 
       <!-- Quiz -->
       <div class="container" id="quiz">
-           <h1 id="quiz_head">📝 Quiz</h1>
-    <div id="quiz_main">
-    <!-- <br/> -->
-    <h3 id="question">Question</h3>
-    <br/>
-    <div id="options">
+        <h1 id="quiz_head">📝 Quiz</h1>
+        <div id="quiz_main">
+          <!-- <br/> -->
+          <h3 id="question">Question</h3>
+          <br />
+          <div id="options">
 
-    </div>
+          </div>
 
-    <div id="last_btn">
-        <button id="back" onclick=back_ques()>⬅️ Back</button>
-        <button id="next" onclick=next_ques()>Next ➡️</button>
-    </div>
-</div>
+          <div id="last_btn">
+            <button id="back" onclick=back_ques()>⬅️ Back</button>
+            <button id="next" onclick=next_ques()>Next ➡️</button>
+          </div>
+        </div>
 
-    <div id="result1">
-        <h1>📜Summary</h1>
-    </div>
-       <button id="retake" onclick="retakeQuiz()">
-  🔁 Retake Quiz
-    </button>
+        <div id="result1">
+          <h1>📜Summary</h1>
+        </div>
+        <button id="retake" onclick="retakeQuiz()">
+          🔁 Retake Quiz
+        </button>
       </div>
 
       <!-- References -->
@@ -685,8 +709,10 @@ if __name__ == "__main__":
         <div class="content">
           <h3>Students</h3>
           <ul class="ref-list">
-            <li><a href="https://github.com/RISHIK396" rel="noopener" target="_blank"><span>Rishik Chaudhary ,3<sup>rd</sup> year, BSc(Hons) Computer Science (2024-25)</span></a></li>
-            <li><a href="https://github.com/KeshavKhari" rel="noopener" target="_blank"><span>Keshav Khari, 3<sup>rd</sup> year, BSc(Hons) Computer Science (2024-25)</span></a></li>
+            <li><a href="https://github.com/RISHIK396" rel="noopener" target="_blank"><span>Rishik Chaudhary
+                  ,3<sup>rd</sup> year, BSc(Hons) Computer Science (2024-25)</span></a></li>
+            <li><a href="https://github.com/KeshavKhari" rel="noopener" target="_blank"><span>Keshav Khari,
+                  3<sup>rd</sup> year, BSc(Hons) Computer Science (2024-25)</span></a></li>
           </ul>
           <h3>Mentors</h3>
           <ul class="ref-list">
