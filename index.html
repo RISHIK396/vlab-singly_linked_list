@@ -111,17 +111,18 @@
           <br />
 
           <h3>In a Singly Linked List, each node contains two components:</h3>
+          <br>
           <span>
             <ul>
               <li>
                 <big><b>Data :</b></big>
               </li>
               <big>This stores the actual value or information (e.g., an integer, string, object, etc.).</big>
-              <span><big><b>Example :</b></big>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
+              <span><big>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
             </ul>
             <ul>
               <li>
-                <big><b>Pointer (or next address):</b></big>
+                <big><b>Pointer (or Next):</b></big>
               </li>
               <span><big>This holds the reference or address of the next node in the list. If it's the last node, the
                   pointer is usually set to null (or None in Python).</big></span>
@@ -208,182 +209,153 @@
 
       </div>
 
-      <!-- Procedure -->
-      <div class="container" id="procedure">
-        <div class="title"><b>Linked List Procedure</b></div>
-        <div class="content">
-          <br />
-          <br />
-          <big><b> This section presents illustrations of key operations on a singly linked list, including insertions
-              at
-              indices 0, 3, and 4, as well as deletions from the same positions. These operations will be demonstrated
-              on
-              an initial linked list comprising four nodes: Node A, Node B, Node C, and Node D.</b></big>
-          <br />
-          <br />
-          <span>
-            <ul>
-              <li>
-                <big><b>Data :</b></big>
-              </li>
-              <big>This stores the actual value or information (e.g., an integer, string, object, etc.).</big>
-              <span><big><b>Example :</b></big>Example: 5, "Hello", {name: "Alice", age: 30}, etc.</span>
-            </ul>
-            <ul>
-              <li>
-                <big><b>Pointer (or next address):</b></big>
-              </li>
-              <span><big>This holds the reference or address of the next node in the list. If it's the last node, the
-                  pointer is usually set to null (or None in Python).</big></span>
-            </ul>
-            <ul>
-              <li>
-                <big><b>Time Complexity :</b></big>
-              </li>
-              <big><b>This section presents illustrations of key operations on a singly linked list, including
-                  insertions at indices 0, 3, and 4, as well as deletions from the same positions.</b>These operations
-                will be demonstrated on an initial linked list comprising four nodes:<b>Node A, Node B, Node C, and Node
-                  D.</b></big>
-            </ul>
-          </span>
-          <img id="s1_img" src="s1.png" alt="Example 1 of the singly">
-          <br />
-          <br />
-          <big><b>Insertion : </b></big>
-          <br />
-          <ul>
-            <li><b>Insertion :</b></li>
-            <p>Insertion in a singly linked list involves creating a new node and adjusting pointers to place it at the
-              desired position without disrupting the structure of the list.</p>
-          </ul>
+      <!-- Linked List Procedure Section -->
+<div class="container" id="procedure">
+  <div class="title"><b>Linked List Procedure</b></div>
+  <div class="content">
+    <p>
+      <b>This section illustrates key operations on a singly linked list, including insertions and deletions at
+        indices 0, 3, and 4. The operations are demonstrated using an initial linked list with four nodes:
+        Node A, Node B, Node C, and Node D.</b>
+    </p>
+    <br><br>
 
-          <h3>Insertion at Index 0 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Create a new node (Node D).</li>
-              <li>Set the new node's (Node D) next pointer to the current head (Node A).</li>
-              <li>Update the head to point to the new node (Node D).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(1)</b></li>
-            <p> Since Index 1 is a fixed position, this operation takes a constant amount of time, regardless of the
-              list's total length.</p>
-            <br />
-          </ul>
-          <br />
-          <img id="s2_img" src="s2_new.png" alt="insertion_begining">
-          <br />
-          <h3>Result -></h3>
-          <br/>
-          <img id="s3_img" src="s3.png" alt="start">
-          <br />
-          <br/>
-          <h3>Insertion at Index 3 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Create a new node (Node D).</li>
-              <li>Traverse the list to the node just before the desired position (Node B)..</li>
-              <li>Set the new node's (Node D) next pointer to the next node in the sequence (Node C).</li>
-              <li>Update the preceding node's (Node B) next pointer to point to the new node (Node D).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(n)</b></li>
-            <p>This is because, in the worst case, you have to traverse a significant portion of the list to find the
-              correct position.</p>
-            <br />
-          </ul>
-          <br />
-          <img id="s4_img" src="s4.png" alt="s4_img">
-          <br />
-          <h3>Result -></h3>
-          <br />
-          <img id="s5_img" src="s5.png" alt="s6_img">
-          <br />
-          <br />
-          <h3>Insertion at Index 4 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Create a new node (Node D).</li>
-              <li>Traverse the list to find the last node (Node C).</li>
-              <li>Point the last node's (Node C) next pointer to the new node (Node D).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(n)</b></li>
-            <p>You must traverse the entire list to find the last node before you can insert the new one.</p>
-            <br />
-          </ul>
-          <img id="s6_img" src="s6.png" alt="s6_img">
-          <br />
-          <h3>Result -></h3>
-          <br />
-          <img id="s7_img" src="s7.png" alt="s7_img">
-          <br />
-          <br/>
-          <h3>Deletion at Index 0 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Identify the first node (Node A) as the target for deletion.</li>
-              <li>Update the list's head pointer to point to the second node in the list (Node B).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(n)</b></li>
-            <p>This is a constant time operation because it only involves changing the head pointer, regardless of the
-              list's size.</p>
-            <br />
-          </ul>
-          <br/>
-          <img id="s8_img" src="s8.png" alt="s8_img">
-          <br />
-          <h3>Result-></h3>
-          <br />
-          <img id="s9_img" src="s9.png" alt="s9_img">
-          <br />
-          <br />
-          <h3>Deletion at Index 3 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Traverse to the node just before the one to be deleted (Node B).</li>
-              <li>Update the next pointer of this preceding node (Node B) to "skip" the target node (Node C) and point
-                directly to the node that follows it (Node D).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(n)</b></li>
-            <p>Finding the node just before the target requires traversing the list from the beginning.</p>
-            <br />
-          </ul>
-          <img id="s10_img" src="s10.png" alt="s10_img">
-          <br/>
-          <h3>Result -></h3>
-          <img id="s11_img" src="s11.png" alt="s11_img">
-          <br />
-          <br />
-          <h3>Deletion at Index 4 :</h3>
-          <ul>
-            <li><b> Procedure: </b></li>
-            <ol>
-              <li>Traverse the list to find the second-to-last node (Node C).</li>
-              <li>Set the next pointer of this second-to-last node to NULL, effectively disconnecting the last node
-                (Node D).</li>
-            </ol>
-            <br />
-            <li><b>Time Complexity: O(n)</b></li>
-            <p>Finding the node just before the target requires traversing the list from the beginning.</p>
-            <br />
-          </ul>
-          <img id="s12_img" src="s12.png" alt="s12_img">
-          <br/>
-          <h3>Result-></h3>
-          <br />
-          <img id="s13_img" src="s13.png" alt="s13_img">
-          <br />
+    <img id="s1_img" src="s1.png" alt="Initial Linked List">
+    <br /><br />
 
-        </div>
-      </div>
+    <!-- Insertion Section -->
+    <h2>Insertion</h2>
+    <br>
+    <p>
+      Insertion in a singly linked list involves creating a new node and adjusting pointers to place it at the
+      desired position without disrupting the structure of the list.
+    </p>
+    <br>
+
+    <!-- Insertion at Index 0 -->
+    <h3>Insertion at Index 0:</h3>
+    <br>
+    <ol>
+      <li>Create a new node (Node D).</li>
+      <li>Set Node D’s next pointer to the current head (Node A).</li>
+      <li>Update the head to point to Node D.</li>
+    </ol>
+    <br>
+
+    <img id="s2_img" src="s2_new.png" alt="Insertion at Index 0">
+    <h4>Result:</h4>
+    <img id="s3_img" src="s3.png" alt="Result after insertion at index 0">
+    <br> <br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(1)</b> – Direct pointer reassignment makes this a constant-time operation.</p>
+
+    <br /><br /><br />
+
+    <!-- Insertion at Index 3 -->
+    <h3>Insertion at Index 3</h3>
+    <br>
+    <ol>
+      <li>Create a new node (Node D).</li>
+      <li>Traverse the list to the node before the desired position (Node B).</li>
+      <li>Set Node D’s next pointer to the next node (Node C).</li>
+      <li>Update Node B’s next pointer to point to Node D.</li>
+    </ol>
+    <br>
+
+    <img id="s4_img" src="s4.png" alt="Insertion at Index 3">
+    <h4>Result:</h4>
+    <img id="s5_img" src="s5.png" alt="Result after insertion at index 3">
+    <br><br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(n)</b> – Requires traversal to the desired position.</p>
+
+    <br /><br /><br />
+
+    <!-- Insertion at Index 4 -->
+    <h3>Insertion at Index 4</h3>
+    <br>
+    <ol>
+      <li>Create a new node (Node D).</li>
+      <li>Traverse the list to the last node (Node C).</li>
+      <li>Set Node C’s next pointer to Node D.</li>
+    </ol>
+    <br>
+
+    <img id="s6_img" src="s6.png" alt="Insertion at Index 4">
+    <h4>Result:</h4>
+    <img id="s7_img" src="s7.png" alt="Result after insertion at index 4">
+    <br><br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(n)</b> – Entire list traversal is needed to reach the last node.</p>
+
+    <br /><br /><br />
+
+    <!-- Deletion Section -->
+     <h2>Deletion</h2>
+    <br>
+    <p>
+      Deletion in a singly linked list involves removing a node 
+      from the desired position by adjusting the pointers of the preceding node, ensuring the continuity of the list structure.
+    </p>
+    <br>
+
+    <!-- Deletion at Index 0 -->
+    <h3>Deletion at Index 0</h3>
+    <br>
+    <ol>
+      <li>Identify the head node (Node A).</li>
+      <li>Update the head to point to the second node (Node B).</li>
+    </ol>
+    <br>
+
+
+    <img id="s8_img" src="s8.png" alt="Deletion at Index 0">
+    <h4>Result:</h4>
+    <img id="s9_img" src="s9.png" alt="Result after deletion at index 0">
+    <br><br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(1)</b> – Only the head pointer is changed.</p>
+
+    <br /><br /><br />
+
+    <!-- Deletion at Index 3 -->
+    <h3>Deletion at Index 3</h3>
+    <br>
+    <ol>
+      <li>Traverse the list to the node before the one to delete (Node B).</li>
+      <li>Update Node B’s next pointer to skip Node C and point to Node D.</li>
+    </ol>
+    <br>
+
+    <img id="s10_img" src="s10.png" alt="Deletion at Index 3">
+    <h4>Result:</h4>
+    <img id="s11_img" src="s11.png" alt="Result after deletion at index 3">
+    <br><br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(n)</b> – Traversal is needed to reach the node before the one to be deleted.</p>
+
+    <br /><br /><br />
+
+    <!-- Deletion at Index 4 -->
+    <h3>Deletion at Index 4</h3>
+    <br>
+    <ol>
+      <li>Traverse the list to find the second-to-last node (Node C).</li>
+      <li>Set Node C’s next pointer to <code>NULL</code>, disconnecting Node D.</li>
+    </ol>
+    <br>
+
+    <img id="s12_img" src="s12.png" alt="Deletion at Index 4">
+    <h4>Result:</h4>
+    <img id="s13_img" src="s13.png" alt="Result after deletion at index 4">
+    <br><br>
+    <h4>Time Complexity:</h4>
+    <p><b>O(n)</b> – Requires traversal to the end of the list.</p>
+
+    <br /><br />
+  </div>
+</div>
+
 
       <!-- Code -->
       <div class="container" id="code">
