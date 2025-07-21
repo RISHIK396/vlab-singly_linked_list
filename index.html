@@ -48,8 +48,8 @@
       </button>
 
       <button class="link" onclick="switchContent('theory')">
-        <img class="icon" src="images/theory_img.png" alt="THEORY" />
-        <span>Theory & Appli.</span>
+        <img class="icon" src="images/theory_img.png" alt="THEORY & Application" />
+        <span>Theory & Application</span>
       </button>
 
       <button class="link" onclick="switchContent('procedure')">
@@ -99,7 +99,7 @@
 
       <!-- Theory & Applications -->
       <div class="container" id="theory">
-        <div class="title">Theory & Applications</div>
+        <div class="title">Theory & Applications </div>
         <div class="content">
           <p>
             A <b>Singly Linked List</b> (SLL) is a linear data structure consisting of nodes in which each node is
@@ -211,7 +211,7 @@
 
       <!-- Linked List Procedure Section -->
 <div class="container" id="procedure">
-  <div class="title"><b>Linked List Procedure</b></div>
+  <div class="title"><b>Procedure</b></div>
   <div class="content">
     <p>
       <b>This section illustrates key operations on a singly linked list, including insertions and deletions at
@@ -233,7 +233,7 @@
     <br>
 
     <!-- Insertion at Index 1 -->
-    <h3>Insertion at Index 1:</h3>
+    <h3>Insertion Before the First Node:</h3>
     <br>
     <ol>
       <li>Create a new node (Node D).</li>
@@ -252,7 +252,7 @@
     <br /><br /><br />
 
     <!-- Insertion at Index 3 -->
-    <h3>Insertion at Index 3</h3>
+    <h3>Insertion at third position</h3>
     <br>
     <ol>
       <li>Create a new node (Node D).</li>
@@ -272,7 +272,7 @@
     <br /><br /><br />
 
     <!-- Insertion at Index 4 -->
-    <h3>Insertion at Index 4</h3>
+    <h3>Insertion at the end of the list</h3>
     <br>
     <ol>
       <li>Create a new node (Node D).</li>
@@ -300,7 +300,7 @@
     <br>
 
     <!-- Deletion at Index 1 -->
-    <h3>Deletion at Index 1</h3>
+    <h3>Deletion at position one</h3>
     <br>
     <ol>
       <li>Identify the head node (Node A).</li>
@@ -319,7 +319,7 @@
     <br /><br /><br />
 
     <!-- Deletion at Index 3 -->
-    <h3>Deletion at Index 3</h3>
+    <h3>Deletion at third position</h3>
     <br>
     <ol>
       <li>Traverse the list to the node before the one to delete (Node B).</li>
@@ -337,7 +337,7 @@
     <br /><br /><br />
 
     <!-- Deletion at Index 4 -->
-    <h3>Deletion at Index 4</h3>
+    <h3>Deletion at the end of the list</h3>
     <br>
     <ol>
       <li>Traverse the list to find the second-to-last node (Node C).</li>
@@ -731,7 +731,7 @@ if __name__ == "__main__":
 
       <!-- Quiz -->
       <div class="container" id="quiz">
-        <h1 id="quiz_head">📝 Quiz</h1>
+        <h1 id="quiz_head">Quiz</h1>
         <div id="quiz_main">
           <!-- <br/> -->
           <h3 id="question">Question</h3>
@@ -741,8 +741,8 @@ if __name__ == "__main__":
           </div>
 
           <div id="last_btn">
-            <button id="back" onclick=back_ques()>⬅️ Back</button>
-            <button id="next" onclick=next_ques()>Next ➡️</button>
+            <button id="back" onclick=back_ques()>Back</button>
+            <button id="next" onclick=next_ques()>Next</button>
           </div>
         </div>
 
@@ -762,9 +762,6 @@ if __name__ == "__main__":
             <li><span>Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to algorithms.
                 MIT press.</span></li>
             <li><span>Bhargava, A., & Bhargava, A. Y. (2024). Grokking algorithms. Simon and Schuster.</span></li>
-            <li><span>A Complete Overview on: Web Development
-                By- Ayush Mauryavanshi
-              </span></li>
           </ul>
         </div>
       </div>
@@ -810,74 +807,3 @@ if __name__ == "__main__":
 </body>
 
 </html>
-
-
-
-
-
-<!-- 
-
--->
-
-
-
-
-<!-- 
-        <h3>Insertion-></h3>
-        <br />
-        content wala part down
-
-<p>The Procedure for Insertion in a Linked List</p>
-          <br/>
-          <ol class="steps-list" start="1">
-            <li><b>Insertion At the begining:</b></li>
-            </ol>
-            <ul type="i">
-              <li>Create a new node.</li>
-              <li>Point the new node’s next to the current head.</li>
-              <li>Update the head to the new node.</li>
-            </ul>
-            <ol class="steps-list" start="2"><li> <b> Insertion At the End:</b></li></ol>
-            <ul>
-              <li>Create a new node</li>
-              <li>Traverse the list to find the new node</li>
-              <li>Point the last node next to new node</li>
-            </ul>
-
-            <ol class="steps-list" start="3"><li> <b>Insertion in the middle of the linked list:</b></li></ol>
-            <ul>
-              <li>Create a new node</li>
-              <li>Traverse the list to the node just before the specified position.</li>
-              <li>Update the pointers to insert the new node in the desired position.</li>
-            </ul>
-          </li>
-        </div>
-        <br/>
-        <h3>Deletion-></h3>
-        <br/>
-        <div class="content">
-          <p>The procedure for Delting a Linked list</p>
-          <br/>
-          <ol>
-            <li><b>Deletion from the Start:</b></li></ol>
-            <ul>
-              <li> If head is None, return (list is empty).</li>
-              <li>Set head = head.next.</li>
-            </ul>
-
-            <ol start="2">
-            <li><b>Deletion from the End:</b></li></ol>
-            <ul>
-              <li>If head is None, return (list is empty).</li>
-              <li>Traverse to the second last node.</li>
-              <li>Set second_last.next = None. </li>
-            </ul>
-            
-            <ol start="3">
-            <li><b>Deletion from the middle:</b></li></ol>
-            <ul>
-              <li>If position is 1, update head = head.next.</li>
-              <li>Otherwise, traverse to the node before the desired position.</li>
-              <li>Set current_node.next = current_node.next.next.</li>
-            </ul>
--->
