@@ -1098,3 +1098,7 @@ button:disabled {
     font-size: 1rem;
     color: #333;
 }
+
+.prac-instructios{
+  padding-left: 20px;
+}
