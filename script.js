@@ -503,6 +503,8 @@ async deleteByValue(value) {
     let curr = this.head;
     let prev = null;
     let index = 1;
+    let found = false;
+
     head.classList.add("blink-found");
     await this.sleep(1000);
     head.classList.remove("blink-found");
@@ -516,6 +518,8 @@ async deleteByValue(value) {
         const valDiv = node?.querySelector(".node-value");
 
         if (curr.value === value) {
+            found = true;
+
             if (valDiv) valDiv.classList.add("blink-found");
             await this.sleep(500);
 
@@ -556,16 +560,16 @@ async deleteByValue(value) {
         index++;
     }
 
-    if (nullSign) {
-        nullSign.classList.add("blink-null");
-        await this.sleep(1000);
-        nullSign.classList.remove("blink-null");
+    if (!found) {
+        if (nullSign) {
+            nullSign.classList.add("blink-null");
+            await this.sleep(1000);
+            nullSign.classList.remove("blink-null");
+        }
+        document.getElementById("searchResult").textContent = "Not Found";
     }
-
-
-    alert("Value not found in the list.");
-
 }
+
 
 
 
