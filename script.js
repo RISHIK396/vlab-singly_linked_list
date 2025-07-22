@@ -224,7 +224,7 @@ function optionSelect(index1) {
         // retain option
         if (your_ans[index] === i) {
             op.style.backgroundColor = "rgb(21, 148, 252)";
-            op.style.color = "black";
+            op.style.color = "white";
             op.style.borderColor = "black";
         }
 
