@@ -1014,7 +1014,7 @@ button:disabled {
 }
 
 #options button{
-    width:40%;
+    width:70%;
     height:auto;
     margin-bottom: 10px;
     font-size:20px;
@@ -1110,7 +1110,7 @@ button:disabled {
     .force-desktop-view {
     width: 1000px; /* or your desktop layout width */
     max-width: 100%;
-    margin: 0 auto;
+    margin: auto;
     overflow-x: auto;  /* allows scrolling on small devices */
   }
 }
