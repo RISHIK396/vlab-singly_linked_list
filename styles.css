@@ -120,8 +120,8 @@ body {
   text-align: center;
   width: 125px;
   height: 115px;
-  padding: 10px;
-  margin: 2px;
+  padding: 3px;
+  margin: 4px;
   border-radius: 20px;
   text-decoration: none;
   color: white;
@@ -1097,4 +1097,11 @@ button:disabled {
     list-style-position: inside;
     font-size: 1rem;
     color: #333;
+}
+
+
+#practise_step{
+  position: relative;
+  left:15px;
+  top: 10px;
 }
