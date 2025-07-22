@@ -1107,10 +1107,8 @@ button:disabled {
 }
 
 #practise{
-    .force-desktop-view {
     width: 1000px; /* or your desktop layout width */
     max-width: 100%;
     margin: auto;
     overflow-x: auto;  /* allows scrolling on small devices */
   }
-}
