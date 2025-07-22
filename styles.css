@@ -1105,3 +1105,12 @@ button:disabled {
   left:15px;
   top: 10px;
 }
+
+#practise{
+    .force-desktop-view {
+    width: 1000px; /* or your desktop layout width */
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;  /* allows scrolling on small devices */
+  }
+}
