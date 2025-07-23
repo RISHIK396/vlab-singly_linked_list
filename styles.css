@@ -1112,3 +1112,8 @@ button:disabled {
     margin: auto;
     overflow-x: auto;  /* allows scrolling on small devices */
   }
+
+
+  #theory{
+    text-align: justify;
+  }
