@@ -630,7 +630,7 @@ handleDeleteInput() {
                 if (curr.value === value) {
                     found.push(index);
                     valDiv.classList.add("blink-found");
-                    document.getElementById("searchResult").textContent = `Indices: ${found.join(", ")}`;
+                    document.getElementById("searchResult").textContent = `Result: ${found.join(", ")}`;
                 }
             }
             if (nodes[index - 1]) {
@@ -696,7 +696,7 @@ handleDeleteInput() {
 
             const indexDiv = document.createElement("div");
             indexDiv.className = "node-index";
-            indexDiv.textContent = `Index: ${index}`;
+            indexDiv.textContent = `Position: ${index}`;
 
             wrapper.appendChild(node);
             wrapper.appendChild(indexDiv);
