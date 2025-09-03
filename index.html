@@ -123,8 +123,7 @@
               <li>  
                 <p><b>Pointer (or Next):</b></p>
               </li>
-              <span><p>This holds the reference or address of the next node in the list. If it's the last node, the
-                  pointer is set to null (or None in Python).</p></span>
+              <span><p>The pointer of the last node is set as NULL which is the same as None in Python.</p></span>
             </ul>
           </span>
           <br />
@@ -132,18 +131,18 @@
             <h1>Applications of Singly Linked List: </h1>
             <br />
             <ol start="1">
-              <li><b> Memory Allocation by the Operating System : </b></li>
+              <li><b> Operating system and memory management : </b></li>
             </ol>
             <ul>
               <li><b> Use-case : </b></li>
               <p>Operating Systems and memory managers.</p>
               <br />
               <li><b>Explanation : </b></li>
-              <p>Singly linked lists are used to keep track of free and allocated memory blocks in heap management. Each
+              <p>Singly linked lists are used to identify free and allocated memory blocks in heap management. Each
                 memory block contains a pointer to the next block</p>
               <br />
               <li><b>Application : </b></li>
-              <p>Efficient insertion and deletion of memory blocks.</p>
+              <p> Faster insertion and deletion of memory blocks.</p>
             </ul>
             <ol start="2">
               <li><b>Undo Functionality in Applications</b></li>
@@ -153,11 +152,11 @@
               <p> Text editors like Microsoft Word, Google Docs.</p>
               <br />
               <li><b>Explanation : </b></li>
-              <p>Each action (e.g., typing a letter) is stored as a node. Pressing "undo"
+              <p>Each action (e.g., typing a letter) is stored as a node. Operation "undo"
                 traverses back through the actions using the links.</p>
               <br />
               <li><b>Application : </b></li>
-              <p> Enables efficient rollback of previous operations.</p>
+              <p>Enables rollback to previous state.</p>
             </ul>
             <ol start="3">
               <li><b>Web Browser Forward Navigation</b></li>
@@ -167,11 +166,11 @@
               <p> Web browsers.</p>
               <br />
               <li><b>Explanation : </b></li>
-              <p>While back navigation uses a stack, forward navigation (redoing pages) can
+              <p>While back navigation uses a stack, forward navigation (redo pages) can
                 be managed using a singly linked list.</p>
               <br />
               <li><b>Application : </b></li>
-              <p> Allows efficient forward traversal through visited pages.</p>
+              <p> Allows forward traversal through visited pages.</p>
             </ul>
             <ol start="4">
               <li><b> Polynomial Arithmetic</b></li>
@@ -185,7 +184,7 @@
                 coefficient and exponent.</p>
               <br />
               <li><b>Application : </b></li>
-              <p> Enables efficient polynomial addition, subtraction, and multiplication without
+              <p> Enables polynomial addition, subtraction, and multiplication without
                 memory waste.</p>
             </ul>
             <ol start="5">
@@ -196,8 +195,7 @@
               <p> Embedded systems and OS kernels.</p>
               <br />
               <li><b>Explanation : </b></li>
-              <p> A task queue can be implemented as a singly linked list where each task is a
-                node.</p>
+              <p>A task queue can be implemented using a singly linked list where each task is a node.</p>
               <br />
               <li><b>Application : </b></li>
               <p> Easy insertion of new tasks and deletion of completed ones in linear time.
@@ -236,8 +234,8 @@
     <br>
     <ol>
       <li>Create a new node (Node D).</li>
-      <li>Set Node D’s next pointer to the current head (Node A).</li>
-      <li>Update the head to point to Node D.</li>
+      <li>Set Node D's next pointer to the next of the Head (Node A).</li>
+      <li>Update the next pointer of the Head towards the Node D.</li>
     </ol>
     <br>
 
@@ -256,8 +254,8 @@
     <ol>
       <li>Create a new node (Node D).</li>
       <li>Traverse the list to the node before the desired position (Node B).</li>
-      <li>Set Node D’s next pointer to the next node (Node C).</li>
-      <li>Update Node B’s next pointer to point to Node D.</li>
+      <li> Set the next pointer of the Node D to the next pointer of the Node B (Node C).</li>
+      <li>Update the next pointer of the Node B towards the Node D.</li>
     </ol>
     <br>
 
@@ -276,7 +274,7 @@
     <ol>
       <li>Create a new node (Node D).</li>
       <li>Traverse the list to the last node (Node C).</li>
-      <li>Set Node C’s next pointer to Node D.</li>
+      <li>Set the next pointer of the Node C to the Node D.</li>
     </ol>
     <br>
 
@@ -372,147 +370,190 @@
           <div id="cppCode" class="code-block active">
             <div class="code-content">
               <pre><code class="language-cpp">
-        #C++ code        
+  #C++ Code
+  
+#include &lt;iostream&gt;
+using namespace std;
 
-        <!-- &lt and &gt for including the angular brackets in html code -->
-              #include &lt;iostream&gt;
-              using namespace std;
+class Node
+{
+public:
+    int data;
+    Node *next;
 
-              // Node class
-              class Node {
-              private:
-              int data;
-              Node* next;
+    // this is  the constructor
+    Node(int d)
+    {
+        this->data = d;
+        this->next = NULL;
+    }
+};
 
-              public:
-              Node(int value) { // Constructor to initialize a node
-              data = value;
-              next = nullptr;
-              }
+void insertAtHead(Node *&head, int data, Node *&tail)
+{
+    if (head == NULL)
+    {
+        // this is your first node
+        cout << "this is your first node " << endl;
+        // new node created
+        Node *temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
 
-              friend class SinglyLinkedList;
-              };
+    else
+    {
+        // inserting the node at the starting of the linked list
+        cout << "creating the node" << endl;
 
-              // Singly Linked List class
-              class SinglyLinkedList {
-              private:
-              Node* head; // Pointer to the first node
+        // here we are creating an object
+        Node *temp = new Node(data);
 
-              public:
-              // Constructor
-              SinglyLinkedList() {
-              head = nullptr;
-              }
+        cout << "the new node is created " << endl;
 
-              // Insert at the start
-              void insertAtStart(int value) {
-              Node* newNode = new Node(value);
-              newNode->next = head;
-              head = newNode;
-              }
+        temp->next = head;
+        head = temp;
+    }
+}
 
-              // Insert at the end
-              void insertAtEnd(int value) {
-              Node* newNode = new Node(value);
-              if (!head) { // If the list is empty
-              head = newNode;
-              return;
-              }
-              Node* temp = head;
-              while (temp->next) {
-              temp = temp->next;
-              }
-              temp->next = newNode;
-              }
+// traversing a linked list
+void print(Node *head)
+{
+    // we will traverse the list
+    if (head == NULL)
+    {
+        cout << "the linked list is empty " << endl;
+        cout << "please add some elements " << endl;
+    }
 
-              // Insert in the middle (after a given value)
-              void insertAfter(int target, int value) {
-              Node* temp = head;
-              while (temp && temp->data != target) {
-              temp = temp->next;
-              }
-              if (temp) { // If the target node is found
-              Node* newNode = new Node(value);
-              newNode->next = temp->next;
-              temp->next = newNode;
-              } else {
-              cout << "Target value not found!\n" ; } } // Delete at the start void deleteAtStart() { if (!head) { // If
-                the list is empty cout << "List is empty!\n" ; return; } Node* temp=head; head=head->next;
-                delete temp;
-                }
+    else
+    {
+        Node *temp = head;
+        while (temp != NULL)
+        {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+}
 
-                // Delete at the end
-                void deleteAtEnd() {
-                if (!head) { // If the list is empty
-                cout << "List is empty!\n" ; return; } if (!head->next) { // If there is only one node
-                  delete head;
-                  head = nullptr;
-                  return;
-                  }
-                  Node* temp = head;
-                  while (temp->next->next) {
-                  temp = temp->next;
-                  }
-                  delete temp->next;
-                  temp->next = nullptr;
-                  }
 
-                  // Delete in the middle (specific value)
-                  void deleteValue(int value) {
-                  if (!head) { // If the list is empty
-                  cout << "List is empty!\n" ; return; } if (head->data == value) { // If the value is at the start
-                    Node* temp = head;
-                    head = head->next;
-                    delete temp;
-                    return;
-                    }
-                    Node* temp = head;
-                    while (temp->next && temp->next->data != value) {
-                    temp = temp->next;
-                    }
-                    if (temp->next) { // If the value is found
-                    Node* toDelete = temp->next;
-                    temp->next = temp->next->next;
-                    delete toDelete;
-                    } else {
-                    cout << "Value not found!\n" ; } } // Search for a value bool search(int value) { Node* temp=head;
-                      while (temp) { if (temp->data == value) {
-                      return true;
-                      }
-                      temp = temp->next;
-                      }
-                      return false;
-                      }
+void insertAtTail(int data,Node*&head,Node*&tail){
+    if(tail==NULL){
+        // it means that the list is empty
+        // new node first
+        Node*temp = new Node(data);
+        head = temp;
+        tail = temp;
+    }
 
-                      // Display the list
-                      void display() {
-                      Node* temp = head;
-                      while (temp) {
-                      cout << temp->data << " -> " ; temp=temp->next;
-                          }
-                          cout << "NULL\n" ; } // Destructor to free memory ~SinglyLinkedList() { Node* temp; while
-                            (head) { temp=head; head=head->next;
-                            delete temp;
-                            }
-                            }
-                            };
+    else{
+        // creating a new node
+        Node* temp = new Node(data);
+        tail->next = temp;
+        tail = temp;
+    }
+}
 
-                            int main() {
-                            SinglyLinkedList list;
 
-                            // Test insertion
-                            list.insertAtStart(10);
-                            list.insertAtStart(20);
-                            list.insertAtEnd(30);
-                            list.insertAfter(10, 25);
+void insert(int data,int pos,Node*&head,Node*&tail){
+    if(pos == 1){
+        // insertion is at tail
+        insertAtHead(head,data,tail);
+        return;
+    }
 
-                            cout << "List after insertions: " ; list.display(); // Test deletion list.deleteAtStart();
-                              cout << "List after deleting at start: " ; list.display(); list.deleteAtEnd(); cout
-                              << "List after deleting at end: " ; list.display(); list.deleteValue(25); cout
-                              << "List after deleting value 25: " ; list.display(); // Test search cout
-                              << "Searching for 10: " << (list.search(10) ? "Found" : "Not Found" ) << "\n" ; cout
-                              << "Searching for 40: " << (list.search(40) ? "Found" : "Not Found" ) << "\n" ; return 0;
-                              } </code>
+    else{
+        int cnt = 1;
+        Node*temp = head;
+        while(cnt<pos-1){
+            temp = temp->next;
+            cnt++;
+        }
+
+        // we reached that position
+        if(temp == tail){
+            // insrtion is at tail
+            insertAtTail(data,head,tail);
+            return;
+        }
+
+        else{
+            // insertion i sin between the list
+            // craete new node 
+            Node*new_Node = new Node(data);
+            new_Node->next = temp->next;
+            temp->next = new_Node;
+            cout<<"Node got inserted at the position "<<cnt<<endl;
+        }
+    }
+}
+
+
+
+void DeleteNode(int pos,Node*&head,Node*&tail){
+    if(head == NULL){
+        cout<<"please add some nodes as your linked list is empty "<<endl;
+    }
+
+    else{
+        if(pos == 1){
+            // delete the first node
+            Node *temp = head;
+            head = temp->next;
+            temp->next = NULL;
+            delete temp;
+        }
+        else{
+            Node*curr = head;
+            Node*prev = NULL;
+            int cnt = 1;
+            while(cnt<pos){
+                prev = curr;
+                curr=curr->next;
+                cnt++;
+            }
+
+            if(curr == tail){
+                // deleting the tail node
+                tail = prev;
+                prev->next=NULL;
+                delete curr;
+            }
+
+            else{
+                // deleting the middle node
+                prev->next = curr->next;
+                curr->next = NULL;
+                delete curr;
+            }
+
+        }
+    }
+}
+
+
+int main()
+{
+    Node*head = NULL;
+    Node*tail = NULL;
+    insertAtHead(head,34,tail);
+    print(head);
+    insertAtHead(head,40,tail);
+    print(head);
+    insertAtHead(head,50,tail);
+    print(head);
+    insertAtTail(20,head,tail);
+    print(head);
+    DeleteNode(2,head,tail);
+    print(head);
+    DeleteNode(3,head,tail);
+    print(head);
+    return 0;
+}
+
+</code>
                               </pre>
               <button class="copy-button">Copy</button>
             </div>
@@ -657,7 +698,7 @@ if __name__ == "__main__":
       <div class="container" id="practice">
         <div class="title">Practice</div>
         <div class="content">
-          <h4>This section demonstrates the basic operations like insert, delete, and search operations thru visual-rich simulation . Follow the given steps for practicing:</h4>
+          <h4>This section explains the basic operations - insert, delete, and search - using visual simulations. Follow the given steps for practicing:</h4>
           <ol id="practise_step">
             <li>Enter comma-separated values (up to maximum  8 values) and click on "Create List" to generate the linked list.</li>
             <li>Choose an operation—Insert, Delete, or Search—and provide the necessary input (like value and position).</li>
@@ -725,7 +766,7 @@ if __name__ == "__main__":
         <div class="title">Result</div>
         <div class="content">
           <p>
-           The designed virtual lab (VLab) demonstrated the implementation of a singly linked list with a maximum of eight elements in an interactive way. It successfully allowed users to perform key operations such as insertion, deletion, and search, visually showcasing the step-by-step pointer adjustments involved in each operation and reinforcing the underlying logic of linked list manipulation.
+           The virtual lab (VLab) demonstrated a singly linked list with up to eight elements in an interactive format. It enabled users to perform insertion, deletion, and search, while visually showing pointer adjustments and reinforcing the logic of linked list operations.
           </p>
         </div>
       </div>

@@ -1017,12 +1017,13 @@ button:disabled {
     width:70%;
     height:auto;
     margin-bottom: 10px;
-    font-size:20px;
+    font-size:25px;
     text-align: left;
     background-color: transparent;
     border-radius: 5px;
     border: 2px solid black;
     color:black;
+    
 }
 
 #options button:hover{
