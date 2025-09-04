@@ -231,12 +231,13 @@
     <br>
 
     <!-- Insertion at Index 1 -->
-    <h3>Insertion Before the First Node:</h3>
+    <h3>Insertion at Position 1</h3>
     <br>
     <ol>
-      <li>Create a new node (Node D).</li>
-      <li>Set Node D's next pointer to the next of the Head (Node A).</li>
-      <li>Update the next pointer of the Head towards the Node D.</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li>Create a new node (value 9) and have its pointer point to the current first node (value 6).</li>
+      <li>Change the Head pointer to point to the new node (value 9).</li>
+      <li>The new node is now the first node in the list.</li>
     </ol>
     <br>
 
@@ -250,13 +251,14 @@
     <br /><br /><br />
 
     <!-- Insertion at Index 3 -->
-    <h3>Insertion at third position</h3>
+    <h3>Insertion at Position 3</h3>
     <br>
     <ol>
-      <li>Create a new node (Node D).</li>
-      <li>Traverse the list to the node before the desired position (Node B).</li>
-      <li> Set the next pointer of the Node D to the next pointer of the Node B (Node C).</li>
-      <li>Update the next pointer of the Node B towards the Node D.</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li> Move to the next node (value 3)..</li>
+      <li> Create a new node (value 9) and have its pointer point to the node at position 3 (value 12).</li>
+      <li>Change the pointer of the node at position 2 (value 3) to point to the new node (value 9).</li>
+      <li>The new node is now correctly inserted at position 3.</li>
     </ol>
     <br>
 
@@ -270,12 +272,14 @@
     <br /><br /><br />
 
     <!-- Insertion at Index 4 -->
-    <h3>Insertion at the end of the list</h3>
+    <h3>Insertion at Position 4</h3>
     <br>
     <ol>
-      <li>Create a new node (Node D).</li>
-      <li>Traverse the list to the last node (Node C).</li>
-      <li>Set the next pointer of the Node C to the Node D.</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li>Move to the next node (value 3).</li>
+      <li>Move to the next node (value 12).</li>
+      <li>Change the pointer of the node at position 3 (value 12) to point to the new node (value 9).</li>
+      <li>The new node is now at the end of the list, which is position 4.</li>
     </ol>
     <br>
 
@@ -298,11 +302,13 @@
     <br>
 
     <!-- Deletion at Index 1 -->
-    <h3>Deletion at position one</h3>
+    <h3>Deletion at Position 1</h3>
     <br>
     <ol>
-      <li>Identify the head node (Node A).</li>
-      <li>Update the head to point to the second node (Node B).</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li>Delete the node at this position.</li>
+      <li>Change the Head pointer to point to the next node (value 3).</li>
+      <li>The node with the value 6 is now disconnected from the list and can be removed.</li>
     </ol>
     <br>
 
@@ -317,11 +323,13 @@
     <br /><br /><br />
 
     <!-- Deletion at Index 3 -->
-    <h3>Deletion at third position</h3>
+    <h3>Deletion at Position 2</h3>
     <br>
     <ol>
-      <li>Traverse the list to the node before the one to delete (Node B).</li>
-      <li>Update Node B’s next pointer to skip Node C and point to Node D.</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li>Move to the next node (value 3).</li>
+      <li>Change the link of the previous node (value 6) to skip over the current node (value 3) and point to the next one (value 12).</li>
+      <li>The node with the value 3 is now disconnected and can be removed.</li>
     </ol>
     <br>
 
@@ -334,12 +342,15 @@
 
     <br /><br /><br />
 
-    <!-- Deletion at Index 4 -->
-    <h3>Deletion at the end of the list</h3>
+    <!-- Deletion at Index 3 -->
+    <h3>Deletion at Position 3</h3>
     <br>
     <ol>
-      <li>Traverse the list to find the second-to-last node (Node C).</li>
-      <li>Set Node C’s next pointer to <code>NULL</code>, disconnecting Node D.</li>
+      <li>Start at the Head pointer → it points to the first node (value 6).</li>
+      <li>Move to the next node (value 3).</li>
+      <li>Move to the next node (value 12).</li>
+      <li>Change the link of the previous node (value 3) to point to the address 'NULL'.</li>
+      <li>The node with the value 12 is now disconnected and can be removed.</li>
     </ol>
     <br>
 
