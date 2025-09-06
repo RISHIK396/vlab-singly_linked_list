@@ -601,13 +601,7 @@ input[type="radio"] {
   }
 }
 
-/* practise code styling */
 
-/* body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f9f9f9;
-} */
 
 .controls, button {
     margin-bottom: 20px;
@@ -702,21 +696,13 @@ input, .inputlist input {
 
 }
 
-/* .node-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap : 2px;  
-    width: 14%; */
-    /* margin: 10px; */
-/* } */
+
 
 .node {
     display: flex;
     width: 80px;
     height: 50px;
     margin: 15px;
-    /* background: #f8f8f8; */
     border: 2px solid #000;
     border-radius: 10px;
     position: relative;
@@ -745,7 +731,6 @@ input, .inputlist input {
     position: absolute;
     font-size: 50px;
     font-weight: 200;
-    /* margin: 1px; */
     top: 46%;
     right: -35px;
     transform: translateY(-50%);
@@ -956,12 +941,6 @@ input, .inputlist input {
   gap: 10px;
 }
 
-
-
-/* .content img{
-  /* left:10px; */
-  /* align-items: center; */
-/* } */ 
 
 .content img{
   left:10%;
