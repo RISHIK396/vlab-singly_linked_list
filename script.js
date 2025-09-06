@@ -34,6 +34,11 @@ function switchContent(topic) {
 
     topicElements[currentTopic].style.display = 'none'; // Hide the previous topic
     topicElements[topic].style.display = 'block'; // Show the selected topic
+    if (topic === "practice") {
+        document.body.classList.add("practice-active");
+    } else {
+        document.body.classList.remove("practice-active");
+    }
     currentTopic = topic; // Update the current topic
 }
 
@@ -188,6 +193,14 @@ options = [
     in constant time.`
         }, 
 ];
+
+function start_quiz(){
+    const instruct = document.getElementById('instruction_quiz');
+    const main = document.getElementById('quiz_main');
+
+    instruct.style.display = 'none';
+    main.style.display = "block";
+}
 
 
 
