@@ -1010,6 +1010,12 @@ button:disabled {
     margin-top: 20px;
 }
 
+#instruction_quiz h2{
+  /* position: relative; */
+  display: flex;
+  margin-left:25px;
+}
+
 #instruction_quiz ul{
   display: flex;
   flex-direction: column;
