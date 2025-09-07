@@ -124,7 +124,7 @@
               <li>  
                 <p><b>Pointer (or Next):</b></p>
               </li>
-              <span><p>The pointer of the last node is set as NULL which is the same as None in Python.</p></span>
+              <span><p>The pointer stores the address of the subsequent node. It is set to NULL (None in Python) for the last node indicating the end of the linked list.</p></span>
             </ul>
           </span>
           <br />
@@ -132,11 +132,11 @@
             <h1>Applications of Singly Linked List: </h1>
             <br />
             <ol start="1">
-              <li><b> Operating system and memory management : </b></li>
+              <li><b> Resource management in Operating systems </b></li>
             </ol>
             <ul>
               <li><b> Use-case : </b></li>
-              <p>Operating Systems and memory managers.</p>
+              <p>Memory management.</p>
               <br />
               <li><b>Explanation : </b></li>
               <p>Singly linked lists are used to identify free and allocated memory blocks in heap management. Each
@@ -160,11 +160,11 @@
               <p>Enables rollback to previous state.</p>
             </ul>
             <ol start="3">
-              <li><b>Web Browser Forward Navigation</b></li>
+              <li><b>Web browsers Forward Navigation</b></li>
             </ol>
             <ul>
               <li><b> Use-case : </b></li>
-              <p> Web browsers.</p>
+              <p> Forward Navigation  in Web browsers.</p>
               <br />
               <li><b>Explanation : </b></li>
               <p>While back navigation uses a stack, forward navigation (redo pages) can
@@ -212,9 +212,9 @@
   <div class="title"><b>Key Operations On SLL</b></div>
   <div class="content">
     <p>
-      This section illustrates key operations on a singly linked list, including <b>insertions</b>, <b>deletions</b> and <b>search</b> 
-        across different positions. The operations are demonstrated using an initial linked list with three nodes:
-        <b>Position 1 (value 6), Position 2 (value 3), and Position 3 (value 12).</b>
+      This section illustrates key operations on a singly linked list, including <b>insertions</b>, <b>deletions</b> and <b>searching</b> 
+        of elements across different positions. The operations are demonstrated using an initial linked list with three nodes:
+        <b> value 6 (Position 1), value 3 (Position 2) , and value 12 (Position 3).</b>
     </p>
     <br><br>
 
@@ -225,13 +225,13 @@
     <h2>Insertion</h2>
     <br>
     <p>
-      Insertion in a singly linked list involves creating a new node and adjusting pointers to place it at the
+      Insertion in a singly linked list involves creating a new node (say with value 9) and adjusting pointers to place it at the
       desired position without disrupting the structure of the list.
     </p>
     <br>
 
     <!-- Insertion at Index 1 -->
-    <h3>Insertion at Position 1</h3>
+    <h3> Insertion at Position 1 i.e. as the first node </h3>
     <br>
     <ol>
       <li>Start at the Head pointer → it points to the first node (value 6).</li>
@@ -272,12 +272,11 @@
     <br /><br /><br />
 
     <!-- Insertion at Index 4 -->
-    <h3>Insertion at Position 4</h3>
+    <h3>Insertion at Position 4 i.e. at the end of the  list </h3>
     <br>
     <ol>
       <li>Start at the Head pointer → it points to the first node (value 6).</li>
-      <li>Move to the next node (value 3).</li>
-      <li>Move to the next node (value 12).</li>
+      <li>Traverse the list till the end of list i.e. Node with pointer as Null is found. In the given illustrations, it is a node with value 12.</li>
       <li>Change the pointer of the node at position 3 (value 12) to point to the new node (value 9).</li>
       <li>The new node is now at the end of the list, which is position 4.</li>
     </ol>
@@ -302,7 +301,7 @@
     <br>
 
     <!-- Deletion at Index 1 -->
-    <h3>Deletion at Position 1</h3>
+    <h3>Deletion at Position 1  i.e. as the first node </h3>
     <br>
     <ol>
       <li>Start at the Head pointer → it points to the first node (value 6).</li>
@@ -343,12 +342,11 @@
     <br /><br /><br />
 
     <!-- Deletion at Index 3 -->
-    <h3>Deletion at Position 3</h3>
+    <h3>Deletion at Position 3 i.e. at the end of the  list </h3>
     <br>
     <ol>
       <li>Start at the Head pointer → it points to the first node (value 6).</li>
-      <li>Move to the next node (value 3).</li>
-      <li>Move to the next node (value 12).</li>
+      <li>Traverse the list till the end of list i.e. Node with pointer as Null is found. In the given illustrations, it is a node with value 12.</li>
       <li>Change the link of the previous node (value 3) to point to the address 'NULL'.</li>
       <li>The node with the value 12 is now disconnected and can be removed.</li>
     </ol>
@@ -758,14 +756,14 @@ if __name__ == "__main__":
                 <!-- Insert Fields -->
                 <div class="inputlist" id="insertDeleteFields" style="display: none;">
                   <input type="number" id="nodeValue" placeholder="Enter the Element">
-                  <input type="number" id="nodeIndex" placeholder="Enter the Index">
+                  <input type="number" id="nodeIndex" placeholder="Enter the Position(Index)">
                 </div>
 
                 <!-- Delete Fields -->
 
                 <div class="inputlist" id="deleteField" style="display: none;">
                   <input type="number" id="deleteValue" placeholder="Enter Value to Delete">
-                  <input type="number" id="deleteindex" placeholder="Enter Delete Index">
+                  <input type="number" id="deleteindex" placeholder="Enter the Position(Index)">
 
                 </div>
 
@@ -796,7 +794,7 @@ if __name__ == "__main__":
         <div class="title">Result</div>
         <div class="content">
           <p>
-           The virtual lab (VLab) demonstrated a singly linked list with up to eight elements in an interactive format. It enabled users to perform insertion, deletion, and search, while visually showing pointer adjustments and reinforcing the logic of linked list operations.
+           The virtual lab (VLab) demonstrated a singly linked list with up to eight elements in an interactive format. It enabled users to perform insertion, deletion, and search operations, while visually showing pointer adjustments and list traversal, reinforcing the logic of linked list operations.
           </p>
         </div>
       </div>
