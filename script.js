@@ -848,4 +848,4 @@ function reset() {
   document.getElementById("first_button").disabled = false;
 }
 
-console.log("Done Successfully")
+console.log("Running Successfully")
